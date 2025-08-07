@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional sports tours for rugby, cricket, football, and hockey teams - training, fixtures, and cultural experiences">
+    <title>Sports Tours | Cape Sports Adventures</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <h1 class="nav__logo"><a href="../index.html">Cape Sports Adventures</a></h1>
+                </div>
+                <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                <ul class="nav__menu" id="nav-menu" role="navigation" aria-label="Main navigation">
+                    <li><a href="../index.html" class="nav__link">Home</a></li>
+                    <li><a href="sports-tours.html" class="nav__link active" aria-current="page">Sports Tours</a></li>
+                    <li><a href="golf.html" class="nav__link">Golf</a></li>
+                    <li><a href="fan-packages.html" class="nav__link">Fan Packages</a></li>
+                    <li><a href="adventure.html" class="nav__link">Adventure</a></li>
+                    <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero hero--sports">
+            <div class="hero__background">
+                <div class="hero__image" style="background-image: url('../images/sports/springbok-training.jpg')"></div>
+                <div class="hero__overlay"></div>
+            </div>
+            <div class="hero__content">
+                <div class="hero__text">
+                    <h1 class="hero__title">Professional Sports Tours</h1>
+                    <p class="hero__subtitle">Elevate your team's performance with world-class training facilities, competitive fixtures, and immersive cultural experiences in the heart of South African sport.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sport Tabs Navigation -->
+        <section class="sports-tabs">
+            <div class="container">
+                <div class="tabs__nav" role="tablist">
+                    <button class="tab__btn tab__btn--active" 
+                            data-tab="rugby" 
+                            role="tab" 
+                            aria-selected="true" 
+                            aria-controls="rugby-panel"
+                            id="rugby-tab">
+                        <span class="tab__icon">🏉</span>
+                        Rugby
+                    </button>
+                    <button class="tab__btn" 
+                            data-tab="cricket" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="cricket-panel"
+                            id="cricket-tab">
+                        <span class="tab__icon">🏏</span>
+                        Cricket
+                    </button>
+                    <button class="tab__btn" 
+                            data-tab="football" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="football-panel"
+                            id="football-tab">
+                        <span class="tab__icon">⚽</span>
+                        Football
+                    </button>
+                    <button class="tab__btn" 
+                            data-tab="hockey" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="hockey-panel"
+                            id="hockey-tab">
+                        <span class="tab__icon">🏑</span>
+                        Hockey
+                    </button>
+                </div>
+
+                <!-- Rugby Tab Content -->
+                <div class="tab__content tab__content--active" 
+                     id="rugby-panel" 
+                     role="tabpanel" 
+                     aria-labelledby="rugby-tab">
+                    <div class="sport-hero">
+                        <div class="sport-hero__image">
+                            <img src="../images/sports/rugby-scrum.jpg" alt="Rugby team in scrum formation" loading="lazy">
+                        </div>
+                        <div class="sport-hero__content">
+                            <h2>Rugby Tours</h2>
+                            <p>Experience the passion and intensity of South African rugby. Train with professional coaches, compete against local teams, and witness the legendary Springbok spirit firsthand.</p>
+                        </div>
+                    </div>
+
+                    <div class="offerings">
+                        <h3>Rugby Tour Offerings</h3>
+                        <div class="offerings__grid">
+                            <div class="offering-card">
+                                <h4>Springbok VIP Experience</h4>
+                                <ul>
+                                    <li>Private Springbok training session viewing</li>
+                                    <li>Meet & greet with current/former players</li>
+                                    <li>Behind-the-scenes stadium tours</li>
+                                    <li>Premium match tickets with hospitality</li>
+                                    <li>Exclusive merchandise and memorabilia</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">3-5 Days</span>
+                                    <span class="price">From R15,000</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card">
+                                <h4>Professional Team Exchange</h4>
+                                <ul>
+                                    <li>Fixtures against local club teams</li>
+                                    <li>High-performance training sessions</li>
+                                    <li>Access to professional facilities</li>
+                                    <li>Video analysis and coaching clinics</li>
+                                    <li>Cultural integration activities</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">7-14 Days</span>
+                                    <span class="price">From R8,500</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card">
+                                <h4>Youth Development Program</h4>
+                                <ul>
+                                    <li>Age-group specific training modules</li>
+                                    <li>Skills development workshops</li>
+                                    <li>Local school team friendlies</li>
+                                    <li>Mentorship from SA rugby legends</li>
+                                    <li>Educational cultural experiences</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">10 Days</span>
+                                    <span class="price">From R6,200</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card">
+                                <h4>Coaching Masterclass</h4>
+                                <ul>
+                                    <li>Sessions with Springbok coaching staff</li>
+                                    <li>Advanced tactical workshops</li>
+                                    <li>Sports science and conditioning</li>
+                                    <li>Match analysis techniques</li>
+                                    <li>Certification programs available</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">5 Days</span>
+                                    <span class="price">From R4,800</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="offerings__cta">
+                            <a href="../index.html#contact" class="btn btn--primary btn--large">Customize Your Rugby Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cricket Tab Content -->
+                <div class="tab__content" 
+                     id="cricket-panel" 
+                     role="tabpanel" 
+                     aria-labelledby="cricket-tab">
+                    <div class="sport-hero">
+                        <div class="sport-hero__image">
+                            <img src="../images/sports/cricket-newlands.jpg" alt="Cricket match at Newlands Stadium" loading="lazy">
+                        </div>
+                        <div class="sport-hero__content">
+                            <h2>Cricket Tours</h2>
+                            <p>Play at the iconic Newlands Cricket Ground and other world-renowned venues. Train with Proteas coaches and experience the rich cricket heritage of South Africa.</p>
+                        </div>
+                    </div>
+
+                    <div class="offerings">
+                        <h3>Cricket Tour Offerings</h3>
+                        <div class="offerings__grid">
+                            <div class="offering-card">
+                                <h4>Proteas Professional Experience</h4>
+                                <ul>
+                                    <li>Training sessions with Proteas coaches</li>
+                                    <li>Net sessions at Western Province facilities</li>
+                                    <li>Match tickets with player meet & greet</li>
+                                    <li>Behind-the-scenes stadium access</li>
+                                    <li>Cricket memorabilia and signed items</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">4-6 Days</span>
+                                    <span class="price">From R12,500</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card">
+                                <h4>Club Team Tournament</h4>
+                                <ul>
+                                    <li>Multi-format matches (T20, ODI, Test)</li>
+                                    <li>Fixtures against premier local clubs</li>
+                                    <li>Professional ground bookings</li>
+                                    <li>Umpiring and scoring services</li>
+                                    <li>Post-match social events</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">8-12 Days</span>
+                                    <span class="price">From R7,800</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card">
+                                <h4>Academy Skills Development</h4>
+                                <ul>
+                                    <li>Intensive batting and bowling clinics</li>
+                                    <li>Wicket-keeping masterclasses</li>
+                                    <li>Fielding and fitness workshops</li>
+                                    <li>Mental conditioning sessions</li>
+                                    <li>Individual performance analysis</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">7 Days</span>
+                                    <span class="price">From R5,400</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card">
+                                <h4>Women's Cricket Program</h4>
+                                <ul>
+                                    <li>Training with SA women's cricket stars</li>
+                                    <li>Empowerment workshops and mentoring</li>
+                                    <li>Matches against local women's teams</li>
+                                    <li>Leadership development activities</li>
+                                    <li>Cultural exchange experiences</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">6 Days</span>
+                                    <span class="price">From R4,900</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="offerings__cta">
+                            <a href="../index.html#contact" class="btn btn--primary btn--large">Customize Your Cricket Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Football Tab Content -->
+                <div class="tab__content" 
+                     id="football-panel" 
+                     role="tabpanel" 
+                     aria-labelledby="football-tab">
+                    <div class="sport-hero">
+                        <div class="sport-hero__image">
+                            <img src="../images/sports/football-stadium.jpg" alt="Football match at Cape Town Stadium" loading="lazy">
+                        </div>
+                        <div class="sport-hero__content">
+                            <h2>Football Tours</h2>
+                            <p>Train at world-class facilities and compete in the football-mad atmosphere of Cape Town. Experience the passion of South African football culture and Bafana Bafana pride.</p>
+                        </div>
+                    </div>
+
+                    <div class="offerings">
+                        <h3>Football Tour Offerings</h3>
+                        <div class="offerings__grid">
+                            <div class="offering-card">
+                                <h4>Bafana Bafana Elite Program</h4>
+                                <ul>
+                                    <li>Training at national team facilities</li>
+                                    <li>Sessions with former Bafana players</li>
+                                    <li>Match analysis with professional coaches</li>
+                                    <li>VIP access to national team matches</li>
+                                    <li>Meet current squad members</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">5-7 Days</span>
+                                    <span class="price">From R11,200</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card">
+                                <h4>Premier League Experience</h4>
+                                <ul>
+                                    <li>Fixtures against PSL academy teams</li>
+                                    <li>Training at Kaizer Chiefs/Orlando Pirates facilities</li>
+                                    <li>Professional match preparation</li>
+                                    <li>Tactical workshops and video analysis</li>
+                                    <li>Stadium tours and club experiences</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">8-10 Days</span>
+                                    <span class="price">From R8,900</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card">
+                                <h4>Youth Development Camp</h4>
+                                <ul>
+                                    <li>Age-specific training programs</li>
+                                    <li>Skills development and drills</li>
+                                    <li>Matches against local youth teams</li>
+                                    <li>Goalkeeper-specific training</li>
+                                    <li>Leadership and teamwork workshops</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">6 Days</span>
+                                    <span class="price">From R5,700</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card">
+                                <h4>Women's Football Initiative</h4>
+                                <ul>
+                                    <li>Banyana Banyana training experience</li>
+                                    <li>Women's football development programs</li>
+                                    <li>Empowerment and leadership training</li>
+                                    <li>Matches against local women's clubs</li>
+                                    <li>Community outreach projects</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">5 Days</span>
+                                    <span class="price">From R4,600</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="offerings__cta">
+                            <a href="../index.html#contact" class="btn btn--primary btn--large">Customize Your Football Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hockey Tab Content -->
+                <div class="tab__content" 
+                     id="hockey-panel" 
+                     role="tabpanel" 
+                     aria-labelledby="hockey-tab">
+                    <div class="sport-hero">
+                        <div class="sport-hero__image">
+                            <img src="../images/sports/hockey-field.jpg" alt="Hockey match in action" loading="lazy">
+                        </div>
+                        <div class="sport-hero__content">
+                            <h2>Hockey Tours</h2>
+                            <p>Excel in the technical precision of field hockey with South Africa's top programs. Train with national squad members and compete on international-standard facilities.</p>
+                        </div>
+                    </div>
+
+                    <div class="offerings">
+                        <h3>Hockey Tour Offerings</h3>
+                        <div class="offerings__grid">
+                            <div class="offering-card">
+                                <h4>National Squad Training</h4>
+                                <ul>
+                                    <li>Training with SA national team players</li>
+                                    <li>High-performance center access</li>
+                                    <li>Video analysis and tactical sessions</li>
+                                    <li>Strength and conditioning programs</li>
+                                    <li>Mental performance workshops</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">5-6 Days</span>
+                                    <span class="price">From R9,800</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card">
+                                <h4>Club Competition Series</h4>
+                                <ul>
+                                    <li>Matches against premier club teams</li>
+                                    <li>Tournament-style competition format</li>
+                                    <li>Professional umpiring services</li>
+                                    <li>Awards ceremony and recognition</li>
+                                    <li>Team bonding and social events</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">7-9 Days</span>
+                                    <span class="price">From R7,200</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card">
+                                <h4>Technical Skills Intensive</h4>
+                                <ul>
+                                    <li>Specialized position training</li>
+                                    <li>Shooting and scoring workshops</li>
+                                    <li>Defensive strategies and drills</li>
+                                    <li>Goalkeeper development program</li>
+                                    <li>Individual coaching sessions</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">4 Days</span>
+                                    <span class="price">From R4,500</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card">
+                                <h4>School Partnership Program</h4>
+                                <ul>
+                                    <li>Exchange with top SA hockey schools</li>
+                                    <li>Educational and sporting combination</li>
+                                    <li>Cultural immersion experiences</li>
+                                    <li>Academic and athletic mentorship</li>
+                                    <li>Long-term friendship building</li>
+                                </ul>
+                                <div class="offering-meta">
+                                    <span class="duration">10-14 Days</span>
+                                    <span class="price">From R6,800</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="offerings__cta">
+                            <a href="../index.html#contact" class="btn btn--primary btn--large">Customize Your Hockey Tour</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Information Section -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="tour-info">
+                    <h2>What's Included in Every Sports Tour</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>Professional Coaching</h3>
+                            <p>Access to qualified coaches with national and international experience in your chosen sport.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Quality Facilities</h3>
+                            <p>Train and compete at premier sporting venues with world-class equipment and facilities.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Cultural Experience</h3>
+                            <p>Immerse yourself in South African culture with township visits, traditional meals, and local interactions.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Accommodation & Transport</h3>
+                            <p>Comfortable lodging and reliable transportation throughout your sporting adventure.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Safety & Support</h3>
+                            <p>24/7 support staff, comprehensive insurance, and medical assistance when needed.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Memorable Experiences</h3>
+                            <p>Unique opportunities and behind-the-scenes access you won't find anywhere else.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="section section--dark">
+            <div class="container">
+                <div class="cta-section">
+                    <h2>Ready to Take Your Team to the Next Level?</h2>
+                    <p>Whether you're looking for competitive fixtures, skills development, or cultural exchange, our sports tours offer unparalleled experiences that will elevate your team both on and off the field.</p>
+                    <div class="cta-actions">
+                        <a href="../index.html#contact" class="btn btn--primary btn--large">Get Custom Quote</a>
+                        <a href="tel:+27211234567" class="btn btn--secondary btn--large">Call Our Team</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 class="footer__logo">Cape Sports Adventures</h3>
+                    <p class="footer__description">Premier sports tourism and outdoor adventure experiences since 2015. Discover Cape Town through the lens of sport.</p>
+                </div>
+                
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Services</h4>
+                    <ul class="footer__links-list">
+                        <li><a href="sports-tours.html">Sports Tours</a></li>
+                        <li><a href="golf.html">Golf Experiences</a></li>
+                        <li><a href="fan-packages.html">Fan Packages</a></li>
+                        <li><a href="adventure.html">Adventure Activities</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Company</h4>
+                    <ul class="footer__links-list">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#safety">Safety Standards</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__contact">
+                    <h4 class="footer__links-title">Contact</h4>
+                    <p>Cape Town, South Africa</p>
+                    <p><a href="mailto:info@capesportsadventures.co.za">info@capesportsadventures.co.za</a></p>
+                    <p><a href="tel:+27211234567">+27 21 123 4567</a></p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <p class="footer__copyright">&copy; 2024 Cape Sports Adventures. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

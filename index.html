@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cape Sports Adventures - Premier sports tourism and outdoor adventure experiences in Cape Town">
+    <title>Cape Sports Adventures | Sports Tourism & Adventure Experiences</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <h1 class="nav__logo"><a href="index.html">Cape Sports Adventures</a></h1>
+                </div>
+                <button class="nav__toggle" 
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                        aria-controls="nav-menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                <ul class="nav__menu" 
+                    id="nav-menu" 
+                    role="navigation" 
+                    aria-label="Main navigation">
+                    <li><a href="#home" class="nav__link active" aria-current="page">Home</a></li>
+                    <li><a href="pages/sports-tours.html" class="nav__link">Sports Tours</a></li>
+                    <li><a href="pages/golf.html" class="nav__link">Golf</a></li>
+                    <li><a href="pages/fan-packages.html" class="nav__link">Fan Packages</a></li>
+                    <li><a href="pages/adventure.html" class="nav__link">Adventure</a></li>
+                    <li><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero__background">
+                <div class="hero__image" style="background-image: url('images/hero/cape-town-table-mountain.jpg')"></div>
+                <div class="hero__overlay"></div>
+            </div>
+            <div class="hero__content">
+                <div class="hero__text">
+                    <h1 class="hero__title">Discover Cape Town Through Sport & Adventure</h1>
+                    <p class="hero__subtitle">Experience the thrill of South African sport, world-class golf, and breathtaking adventures in the Mother City. Since 2015, we've been creating unforgettable journeys for teams, fans, and adventurers from around the world.</p>
+                    <a href="#contact" class="btn btn--primary btn--large">Plan Your Tour</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Tiles -->
+        <section class="features">
+            <div class="container">
+                <div class="features__grid">
+                    <div class="feature-tile">
+                        <div class="feature-tile__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                <line x1="3" y1="6" x2="21" y2="6"/>
+                                <path d="M16 10a4 4 0 0 1-8 0"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-tile__title">Sports Tours</h3>
+                        <p class="feature-tile__description">Professional team tours for rugby, cricket, football, and hockey with fixtures, coaching, and behind-the-scenes access.</p>
+                        <a href="pages/sports-tours.html" class="feature-tile__link">Explore Tours <span aria-hidden="true">→</span></a>
+                    </div>
+
+                    <div class="feature-tile">
+                        <div class="feature-tile__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13"/>
+                                <polygon points="22,2 15,22 11,13 2,9 22,2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-tile__title">Golf Experiences</h3>
+                        <p class="feature-tile__description">Play championship courses like Fancourt and Pinnacle Point with stunning ocean and mountain views.</p>
+                        <a href="pages/golf.html" class="feature-tile__link">Book Golf <span aria-hidden="true">→</span></a>
+                    </div>
+
+                    <div class="feature-tile">
+                        <div class="feature-tile__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-tile__title">Fan Packages</h3>
+                        <p class="feature-tile__description">VIP access to Springbok matches, Cape Town Sevens, and iconic sporting events with premium hospitality.</p>
+                        <a href="pages/fan-packages.html" class="feature-tile__link">Fan Experiences <span aria-hidden="true">→</span></a>
+                    </div>
+
+                    <div class="feature-tile">
+                        <div class="feature-tile__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/>
+                                <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-tile__title">Adventure Activities</h3>
+                        <p class="feature-tile__description">Shark cage diving, Table Mountain hikes, paragliding, and cultural experiences in the Western Cape.</p>
+                        <a href="pages/adventure.html" class="feature-tile__link">Adventure Awaits <span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Experiences -->
+        <section class="featured-experiences">
+            <div class="container">
+                <h2 class="featured-experiences__title">Featured Experiences</h2>
+                <p class="featured-experiences__subtitle">Discover our most popular adventures and create memories that last a lifetime</p>
+                
+                <div class="carousel">
+                    <div class="carousel__container">
+                        <div class="carousel__track" data-carousel="track">
+                            <div class="carousel__slide" data-slide="0">
+                                <div class="experience-card">
+                                    <div class="experience-card__image">
+                                        <img src="images/sports/springbok-match.jpg" alt="Springbok Rugby Match at Cape Town Stadium" loading="lazy">
+                                        <div class="experience-card__badge">Most Popular</div>
+                                    </div>
+                                    <div class="experience-card__content">
+                                        <h3 class="experience-card__title">Springbok Rugby Experience</h3>
+                                        <p class="experience-card__description">Feel the passion of South African rugby with VIP tickets, stadium tours, and meet-and-greet opportunities with legends.</p>
+                                        <div class="experience-card__details">
+                                            <span class="experience-card__price">From R2,500</span>
+                                            <span class="experience-card__duration">Full Day</span>
+                                        </div>
+                                        <a href="pages/fan-packages.html#springbok" class="btn btn--secondary btn--small">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel__slide" data-slide="1">
+                                <div class="experience-card">
+                                    <div class="experience-card__image">
+                                        <img src="images/golf/fancourt-course.jpg" alt="Fancourt Golf Course with mountain views" loading="lazy">
+                                    </div>
+                                    <div class="experience-card__content">
+                                        <h3 class="experience-card__title">Fancourt Golf Getaway</h3>
+                                        <p class="experience-card__description">Play three championship courses at South Africa's premier golf resort, including the world-renowned Links course.</p>
+                                        <div class="experience-card__details">
+                                            <span class="experience-card__price">From R8,500</span>
+                                            <span class="experience-card__duration">3 Days</span>
+                                        </div>
+                                        <a href="pages/golf.html#fancourt" class="btn btn--secondary btn--small">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel__slide" data-slide="2">
+                                <div class="experience-card">
+                                    <div class="experience-card__image">
+                                        <img src="images/adventure/shark-cage-diving.jpg" alt="Great White Shark Cage Diving in Gansbaai" loading="lazy">
+                                        <div class="experience-card__badge">Adrenaline</div>
+                                    </div>
+                                    <div class="experience-card__content">
+                                        <h3 class="experience-card__title">Great White Shark Diving</h3>
+                                        <p class="experience-card__description">Come face-to-face with the ocean's apex predator in the crystal-clear waters of Shark Alley, Gansbaai.</p>
+                                        <div class="experience-card__details">
+                                            <span class="experience-card__price">From R2,200</span>
+                                            <span class="experience-card__duration">Full Day</span>
+                                        </div>
+                                        <a href="pages/adventure.html#shark-diving" class="btn btn--secondary btn--small">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel__slide" data-slide="3">
+                                <div class="experience-card">
+                                    <div class="experience-card__image">
+                                        <img src="images/adventure/table-mountain-hike.jpg" alt="Hikers on Table Mountain with Cape Town views" loading="lazy">
+                                    </div>
+                                    <div class="experience-card__content">
+                                        <h3 class="experience-card__title">Table Mountain Adventure</h3>
+                                        <p class="experience-card__description">Conquer Cape Town's iconic flat-topped mountain with guided hikes, rock climbing, and abseiling experiences.</p>
+                                        <div class="experience-card__details">
+                                            <span class="experience-card__price">From R650</span>
+                                            <span class="experience-card__duration">Half Day</span>
+                                        </div>
+                                        <a href="pages/adventure.html#table-mountain" class="btn btn--secondary btn--small">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel__slide" data-slide="4">
+                                <div class="experience-card">
+                                    <div class="experience-card__image">
+                                        <img src="images/sports/cape-town-sevens.jpg" alt="Cape Town Sevens Rugby Tournament" loading="lazy">
+                                    </div>
+                                    <div class="experience-card__content">
+                                        <h3 class="experience-card__title">Cape Town Sevens</h3>
+                                        <p class="experience-card__description">Experience the fastest, most exciting form of rugby at one of the world's most vibrant sevens tournaments.</p>
+                                        <div class="experience-card__details">
+                                            <span class="experience-card__price">From R1,800</span>
+                                            <span class="experience-card__duration">Weekend</span>
+                                        </div>
+                                        <a href="pages/fan-packages.html#sevens" class="btn btn--secondary btn--small">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel__slide" data-slide="5">
+                                <div class="experience-card">
+                                    <div class="experience-card__image">
+                                        <img src="images/adventure/wine-tasting.jpg" alt="Wine tasting in Stellenbosch vineyards" loading="lazy">
+                                    </div>
+                                    <div class="experience-card__content">
+                                        <h3 class="experience-card__title">Winelands Experience</h3>
+                                        <p class="experience-card__description">Discover world-renowned wines in the stunning Cape Winelands with tastings at premium estates.</p>
+                                        <div class="experience-card__details">
+                                            <span class="experience-card__price">From R1,100</span>
+                                            <span class="experience-card__duration">Full Day</span>
+                                        </div>
+                                        <a href="pages/adventure.html#winelands" class="btn btn--secondary btn--small">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Controls -->
+                    <button class="carousel__btn carousel__btn--prev" data-carousel="prev" aria-label="Previous experience">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15,18 9,12 15,6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="carousel__btn carousel__btn--next" data-carousel="next" aria-label="Next experience">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"></polyline>
+                        </svg>
+                    </button>
+                    
+                    <!-- Carousel Indicators -->
+                    <div class="carousel__indicators" data-carousel="indicators">
+                        <button class="carousel__indicator carousel__indicator--active" data-slide-to="0" aria-label="Go to slide 1"></button>
+                        <button class="carousel__indicator" data-slide-to="1" aria-label="Go to slide 2"></button>
+                        <button class="carousel__indicator" data-slide-to="2" aria-label="Go to slide 3"></button>
+                        <button class="carousel__indicator" data-slide-to="3" aria-label="Go to slide 4"></button>
+                        <button class="carousel__indicator" data-slide-to="4" aria-label="Go to slide 5"></button>
+                        <button class="carousel__indicator" data-slide-to="5" aria-label="Go to slide 6"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Itinerary Builder Section -->
+        <section class="itinerary-builder">
+            <div class="container">
+                <div class="itinerary-builder__header">
+                    <h2 class="itinerary-builder__title">Build Your Perfect Cape Town Itinerary</h2>
+                    <p class="itinerary-builder__subtitle">Customize your sports and adventure experience with our interactive itinerary builder</p>
+                </div>
+
+                <div class="itinerary-builder__form-container">
+                    <form class="itinerary-form" id="itineraryForm">
+                        <!-- Step 1: Sport Type Selection -->
+                        <div class="form-step" data-step="1">
+                            <h3 class="form-step__title">
+                                <span class="form-step__number">1</span>
+                                Choose Your Primary Experience
+                            </h3>
+                            <div class="form__group">
+                                <label for="sport-type" class="form__label">Experience Type</label>
+                                <select id="sport-type" name="sportType" class="form__input form__select" required>
+                                    <option value="">Select your primary interest</option>
+                                    <optgroup label="Sports Tours">
+                                        <option value="rugby-tour" data-category="sports" data-base-price="8500">Rugby Team Tour</option>
+                                        <option value="cricket-tour" data-category="sports" data-base-price="7800">Cricket Team Tour</option>
+                                        <option value="football-tour" data-category="sports" data-base-price="8900">Football Team Tour</option>
+                                        <option value="hockey-tour" data-category="sports" data-base-price="7200">Hockey Team Tour</option>
+                                    </optgroup>
+                                    <optgroup label="Golf Experiences">
+                                        <option value="championship-golf" data-category="golf" data-base-price="12500">Championship Golf Package</option>
+                                        <option value="winelands-golf" data-category="golf" data-base-price="9800">Winelands Golf Experience</option>
+                                        <option value="coastal-golf" data-category="golf" data-base-price="11200">Coastal Golf Adventure</option>
+                                    </optgroup>
+                                    <optgroup label="Fan Experiences">
+                                        <option value="springbok-vip" data-category="fan" data-base-price="2500">Springbok VIP Experience</option>
+                                        <option value="sevens-weekend" data-category="fan" data-base-price="1800">Cape Town Sevens Weekend</option>
+                                        <option value="cricket-experience" data-category="fan" data-base-price="1200">Proteas Cricket Experience</option>
+                                    </optgroup>
+                                    <optgroup label="Adventure Activities">
+                                        <option value="ultimate-adventure" data-category="adventure" data-base-price="8500">Ultimate Cape Adventure (5 days)</option>
+                                        <option value="adrenaline-special" data-category="adventure" data-base-price="5800">Adrenaline Seeker Special (3 days)</option>
+                                        <option value="cultural-adventure" data-category="adventure" data-base-price="4200">Cultural & Adventure Mix</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Group Details -->
+                        <div class="form-step" data-step="2">
+                            <h3 class="form-step__title">
+                                <span class="form-step__number">2</span>
+                                Group Details
+                            </h3>
+                            <div class="form__row">
+                                <div class="form__group form__group--half">
+                                    <label for="group-size" class="form__label">Group Size</label>
+                                    <select id="group-size" name="groupSize" class="form__input form__select" required>
+                                        <option value="">Select group size</option>
+                                        <option value="1-2" data-multiplier="1">1-2 people</option>
+                                        <option value="3-5" data-multiplier="0.9">3-5 people (-10%)</option>
+                                        <option value="6-10" data-multiplier="0.85">6-10 people (-15%)</option>
+                                        <option value="11-20" data-multiplier="0.8">11-20 people (-20%)</option>
+                                        <option value="21-30" data-multiplier="0.75">21-30 people (-25%)</option>
+                                        <option value="30+" data-multiplier="0.7">30+ people (-30%)</option>
+                                    </select>
+                                </div>
+                                <div class="form__group form__group--half">
+                                    <label for="group-type" class="form__label">Group Type</label>
+                                    <select id="group-type" name="groupType" class="form__input form__select">
+                                        <option value="recreational">Recreational/Friends</option>
+                                        <option value="school">School/Educational</option>
+                                        <option value="club">Sports Club/Team</option>
+                                        <option value="corporate">Corporate Group</option>
+                                        <option value="family">Family Group</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Travel Dates -->
+                        <div class="form-step" data-step="3">
+                            <h3 class="form-step__title">
+                                <span class="form-step__number">3</span>
+                                Travel Dates & Duration
+                            </h3>
+                            <div class="form__row">
+                                <div class="form__group form__group--half">
+                                    <label for="start-date" class="form__label">Preferred Start Date</label>
+                                    <input type="date" id="start-date" name="startDate" class="form__input" required>
+                                </div>
+                                <div class="form__group form__group--half">
+                                    <label for="duration" class="form__label">Duration</label>
+                                    <select id="duration" name="duration" class="form__input form__select" required>
+                                        <option value="">Select duration</option>
+                                        <option value="1-2" data-multiplier="0.6">1-2 days</option>
+                                        <option value="3-4" data-multiplier="0.8">3-4 days</option>
+                                        <option value="5-7" data-multiplier="1">5-7 days (Standard)</option>
+                                        <option value="8-10" data-multiplier="1.3">8-10 days</option>
+                                        <option value="11-14" data-multiplier="1.6">11-14 days</option>
+                                        <option value="15+" data-multiplier="2">15+ days</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="season-preference" class="form__label">Season Preference</label>
+                                <select id="season-preference" name="seasonPreference" class="form__input form__select">
+                                    <option value="">No preference</option>
+                                    <option value="summer" data-multiplier="1.1">Summer (Dec-Feb) - Peak season</option>
+                                    <option value="autumn" data-multiplier="1">Autumn (Mar-May) - Great weather</option>
+                                    <option value="winter" data-multiplier="0.9">Winter (Jun-Aug) - Off season</option>
+                                    <option value="spring" data-multiplier="1.05">Spring (Sep-Nov) - Whale season</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Add-on Activities -->
+                        <div class="form-step" data-step="4">
+                            <h3 class="form-step__title">
+                                <span class="form-step__number">4</span>
+                                Enhanced Experiences & Add-ons
+                            </h3>
+                            
+                            <div class="addon-categories">
+                                <!-- Adventure Add-ons -->
+                                <div class="addon-category">
+                                    <h4 class="addon-category__title">Adventure Activities</h4>
+                                    <div class="addon-grid">
+                                        <label class="addon-item">
+                                            <input type="checkbox" name="addons" value="shark-diving" data-price="2200" class="addon-checkbox">
+                                            <div class="addon-content">
+                                                <span class="addon-name">Shark Cage Diving</span>
+                                                <span class="addon-price">+R2,200</span>
+                                            </div>
+                                        </label>
+                                        <label class="addon-item">
+                                            <input type="checkbox" name="addons" value="table-mountain" data-price="650" class="addon-checkbox">
+                                            <div class="addon-content">
+                                                <span class="addon-name">Table Mountain Hike</span>
+                                                <span class="addon-price">+R650</span>
+                                            </div>
+                                        </label>
+                                        <label class="addon-item">
+                                            <input type="checkbox" name="addons" value="paragliding" data-price="1200" class="addon-checkbox">
+                                            <div class="addon-content">
+                                                <span class="addon-name">Paragliding Experience</span>
+                                                <span class="addon-price">+R1,200</span>
+                                            </div>
+                                        </label>
+                                        <label class="addon-item">
+                                            <input type="checkbox" name="addons" value="helicopter" data-price="1800" class="addon-checkbox">
+                                            <div class="addon-content">
+                                                <span class="addon-name">Helicopter Tour</span>
+                                                <span class="addon-price">+R1,800</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Cultural Add-ons -->
+                                <div class="addon-category">
+                                    <h4 class="addon-category__title">Cultural Experiences</h4>
+                                    <div class="addon-grid">
+                                        <label class="addon-item">
+                                            <input type="checkbox" name="addons" value="winelands" data-price="1100" class="addon-checkbox">
+                                            <div class="addon-content">
+                                                <span class="addon-name">Winelands Tour</span>
+                                                <span class="addon-price">+R1,100</span>
+                                            </div>
+                                        </label>
+                                        <label class="addon-item">
+                                            <input type="checkbox" name="addons" value="township-tour" data-price="650" class="addon-checkbox">
+                                            <div class="addon-content">
+                                                <span class="addon-name">Township Cultural Tour</span>
+                                                <span class="addon-price">+R650</span>
+                                            </div>
+                                        </label>
+                                        <label class="addon-item">
+                                            <input type="checkbox" name="addons" value="cape-peninsula" data-price="950" class="addon-checkbox">
+                                            <div class="addon-content">
+                                                <span class="addon-name">Cape Peninsula Tour</span>
+                                                <span class="addon-price">+R950</span>
+                                            </div>
+                                        </label>
+                                        <label class="addon-item">
+                                            <input type="checkbox" name="addons" value="city-tour" data-price="350" class="addon-checkbox">
+                                            <div class="addon-content">
+                                                <span class="addon-name">Historic City Tour</span>
+                                                <span class="addon-price">+R350</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Premium Services -->
+                                <div class="addon-category">
+                                    <h4 class="addon-category__title">Premium Services</h4>
+                                    <div class="addon-grid">
+                                        <label class="addon-item">
+                                            <input type="checkbox" name="addons" value="private-guide" data-price="1500" class="addon-checkbox">
+                                            <div class="addon-content">
+                                                <span class="addon-name">Private Guide Service</span>
+                                                <span class="addon-price">+R1,500/day</span>
+                                            </div>
+                                        </label>
+                                        <label class="addon-item">
+                                            <input type="checkbox" name="addons" value="luxury-transport" data-price="800" class="addon-checkbox">
+                                            <div class="addon-content">
+                                                <span class="addon-name">Luxury Transportation</span>
+                                                <span class="addon-price">+R800/day</span>
+                                            </div>
+                                        </label>
+                                        <label class="addon-item">
+                                            <input type="checkbox" name="addons" value="premium-accommodation" data-price="2500" class="addon-checkbox">
+                                            <div class="addon-content">
+                                                <span class="addon-name">Premium Accommodation</span>
+                                                <span class="addon-price">+R2,500/night</span>
+                                            </div>
+                                        </label>
+                                        <label class="addon-item">
+                                            <input type="checkbox" name="addons" value="gourmet-dining" data-price="850" class="addon-checkbox">
+                                            <div class="addon-content">
+                                                <span class="addon-name">Gourmet Dining Experience</span>
+                                                <span class="addon-price">+R850/meal</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing Summary -->
+                        <div class="pricing-summary">
+                            <div class="pricing-summary__content">
+                                <div class="pricing-breakdown">
+                                    <div class="pricing-line">
+                                        <span class="pricing-label">Base Package:</span>
+                                        <span class="pricing-value" id="basePrice">R0</span>
+                                    </div>
+                                    <div class="pricing-line">
+                                        <span class="pricing-label">Add-ons:</span>
+                                        <span class="pricing-value" id="addonsPrice">R0</span>
+                                    </div>
+                                    <div class="pricing-line pricing-line--discount" id="discountLine" style="display: none;">
+                                        <span class="pricing-label">Group Discount:</span>
+                                        <span class="pricing-value" id="discountAmount">R0</span>
+                                    </div>
+                                    <div class="pricing-line pricing-line--total">
+                                        <span class="pricing-label">Estimated Total:</span>
+                                        <span class="pricing-value" id="totalPrice">R0</span>
+                                    </div>
+                                    <div class="pricing-note">
+                                        <small>*Per person pricing. Final quote may vary based on availability, specific requirements, and seasonal factors.</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn--secondary" id="resetForm">Reset Form</button>
+                                    <button type="submit" class="btn btn--primary btn--large" id="generateQuote" disabled>
+                                        Generate Detailed Quote
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                                            <path d="M22 2L11 13"/>
+                                            <polygon points="22,2 15,22 11,13 2,9 22,2"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <h2 class="contact__title">Ready to Start Your Adventure?</h2>
+                        <p class="contact__subtitle">Get in touch to plan your perfect Cape Town sports and adventure experience</p>
+                        
+                        <div class="contact__details">
+                            <div class="contact__item">
+                                <div class="contact__item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </div>
+                                <div class="contact__item-content">
+                                    <h3>Location</h3>
+                                    <p>Cape Town, South Africa</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact__item">
+                                <div class="contact__item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </div>
+                                <div class="contact__item-content">
+                                    <h3>Email</h3>
+                                    <a href="mailto:info@capesportsadventures.co.za">info@capesportsadventures.co.za</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact__item">
+                                <div class="contact__item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                </div>
+                                <div class="contact__item-content">
+                                    <h3>Phone</h3>
+                                    <a href="tel:+27211234567">+27 21 123 4567</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact__form">
+                        <div class="form__group">
+                            <label for="name" class="form__label">Your Name</label>
+                            <input type="text" id="name" name="name" class="form__input" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form__input" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="service" class="form__label">Service Interest</label>
+                            <select id="service" name="service" class="form__input" required>
+                                <option value="">Select a service</option>
+                                <option value="sports-tours">Sports Tours</option>
+                                <option value="golf">Golf Experiences</option>
+                                <option value="fan-packages">Fan Packages</option>
+                                <option value="adventure">Adventure Activities</option>
+                                <option value="corporate">Corporate Travel</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="message" class="form__label">Message</label>
+                            <textarea id="message" name="message" class="form__input form__textarea" rows="4" placeholder="Tell us about your group and requirements" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 class="footer__logo">Cape Sports Adventures</h3>
+                    <p class="footer__description">Premier sports tourism and outdoor adventure experiences since 2015. Discover Cape Town through the lens of sport.</p>
+                    <div class="footer__social">
+                        <a href="https://facebook.com/capesportsadventures" class="footer__social-link" aria-label="Follow us on Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/capesportsadventures" class="footer__social-link" aria-label="Follow us on Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.324-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.417-3.324c.876-.876 2.027-1.366 3.324-1.366s2.448.49 3.324 1.366c.927.876 1.417 2.027 1.417 3.324s-.49 2.448-1.417 3.244c-.876.807-2.027 1.297-3.324 1.297zm7.598-5.508c-.224 1.297-.927 2.299-2.027 2.824-.876.42-1.887.49-2.824.21-1.297-.42-2.299-1.487-2.299-2.824 0-1.648 1.347-2.995 2.995-2.995s2.995 1.347 2.995 2.995c0 .28-.07.49-.14.79z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/capesportsadv" class="footer__social-link" aria-label="Follow us on Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/capesportsadventures" class="footer__social-link" aria-label="Subscribe to our YouTube channel">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Services</h4>
+                    <ul class="footer__links-list">
+                        <li><a href="pages/sports-tours.html">Sports Tours</a></li>
+                        <li><a href="pages/golf.html">Golf Experiences</a></li>
+                        <li><a href="pages/fan-packages.html">Fan Packages</a></li>
+                        <li><a href="pages/adventure.html">Adventure Activities</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Company</h4>
+                    <ul class="footer__links-list">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#safety">Safety Standards</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__accessibility">
+                    <h4 class="footer__links-title">Accessibility</h4>
+                    <div class="accessibility__controls">
+                        <button class="accessibility__btn" data-accessibility="font-size" aria-label="Adjust font size">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 7V4a1 1 0 0 1 1-1h6"/>
+                                <path d="M4 20v-3a1 1 0 0 1 1-1h6"/>
+                                <path d="M20 4v3a1 1 0 0 1-1 1h-6"/>
+                                <path d="M20 20v-3a1 1 0 0 1-1-1h-6"/>
+                                <text x="12" y="13" font-size="6" text-anchor="middle">A</text>
+                            </svg>
+                            Text Size
+                        </button>
+                        <button class="accessibility__btn" data-accessibility="contrast" aria-label="Toggle high contrast">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10V2z"/>
+                            </svg>
+                            Contrast
+                        </button>
+                        <button class="accessibility__btn" data-accessibility="motion" aria-label="Reduce motion">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                            Motion
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <p class="footer__copyright">&copy; 2024 Cape Sports Adventures. All rights reserved.</p>
+                    <div class="footer__legal">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

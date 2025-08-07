@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Championship golf experiences in Cape Town - play premier courses, luxury packages, and professional clinics">
+    <title>Golf Experiences | Cape Sports Adventures</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <h1 class="nav__logo"><a href="../index.html">Cape Sports Adventures</a></h1>
+                </div>
+                <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                <ul class="nav__menu" id="nav-menu" role="navigation" aria-label="Main navigation">
+                    <li><a href="../index.html" class="nav__link">Home</a></li>
+                    <li><a href="sports-tours.html" class="nav__link">Sports Tours</a></li>
+                    <li><a href="golf.html" class="nav__link active" aria-current="page">Golf</a></li>
+                    <li><a href="fan-packages.html" class="nav__link">Fan Packages</a></li>
+                    <li><a href="adventure.html" class="nav__link">Adventure</a></li>
+                    <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero hero--golf">
+            <div class="hero__background">
+                <div class="hero__image" style="background-image: url('../images/golf/pinnacle-point-coastal.jpg')"></div>
+                <div class="hero__overlay"></div>
+            </div>
+            <div class="hero__content">
+                <div class="hero__text">
+                    <h1 class="hero__title">World-Class Golf Experiences</h1>
+                    <p class="hero__subtitle">Play championship courses set against dramatic coastlines, mountain ranges, and award-winning wine estates in one of the world's premier golf destinations.</p>
+                    <a href="#contact-golf" class="btn btn--primary btn--large">Build Your Golf Itinerary</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premier Courses Section -->
+        <section class="golf-courses">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section__title">Premier Courses</h2>
+                    <p class="section__subtitle">Discover South Africa's most celebrated golf courses, from clifftop ocean layouts to vineyard settings</p>
+                </div>
+
+                <div class="courses-grid">
+                    <!-- Fancourt -->
+                    <div class="course-card course-card--featured" id="fancourt">
+                        <div class="course-card__image">
+                            <img src="../images/golf/fancourt-links.jpg" alt="Fancourt Links Course with mountain backdrop" loading="lazy">
+                            <div class="course-card__badge">Championship</div>
+                        </div>
+                        <div class="course-card__content">
+                            <div class="course-card__header">
+                                <h3 class="course-card__title">Fancourt Golf Estate</h3>
+                                <p class="course-card__location">Garden Route • George</p>
+                            </div>
+                            <p class="course-card__description">Home to three Gary Player-designed championship courses including the world-renowned Links course. Fancourt has hosted the Presidents Cup and continues to challenge golfers with its strategic design.</p>
+                            
+                            <div class="course-details">
+                                <div class="course-stats">
+                                    <div class="stat">
+                                        <span class="stat__label">Courses</span>
+                                        <span class="stat__value">3</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__label">Par</span>
+                                        <span class="stat__value">72</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__label">Designer</span>
+                                        <span class="stat__value">Gary Player</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="course-highlights">
+                                    <h4>Course Highlights</h4>
+                                    <ul>
+                                        <li>Links Course - Presidents Cup venue</li>
+                                        <li>Montagu - Mountain views & strategic play</li>
+                                        <li>Outeniqua - Forest setting & water features</li>
+                                        <li>Gary Player Golf Academy</li>
+                                        <li>Five-star manor house accommodation</li>
+                                    </ul>
+                                </div>
+
+                                <div class="course-pricing">
+                                    <span class="price-range">From R2,800</span>
+                                    <span class="price-note">per round</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pinnacle Point -->
+                    <div class="course-card" id="pinnacle-point">
+                        <div class="course-card__image">
+                            <img src="../images/golf/pinnacle-point-ocean.jpg" alt="Pinnacle Point clifftop holes overlooking Indian Ocean" loading="lazy">
+                            <div class="course-card__badge">Clifftop</div>
+                        </div>
+                        <div class="course-card__content">
+                            <div class="course-card__header">
+                                <h3 class="course-card__title">Pinnacle Point Golf Club</h3>
+                                <p class="course-card__location">Garden Route • Mossel Bay</p>
+                            </div>
+                            <p class="course-card__description">Dramatically perched on cliffs 120 meters above the Indian Ocean, featuring the iconic signature 7th hole that plays across the ocean inlet.</p>
+                            
+                            <div class="course-details">
+                                <div class="course-stats">
+                                    <div class="stat">
+                                        <span class="stat__label">Elevation</span>
+                                        <span class="stat__value">120m</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__label">Par</span>
+                                        <span class="stat__value">72</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__label">Designer</span>
+                                        <span class="stat__value">Peter Matkovich</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="course-highlights">
+                                    <h4>Course Highlights</h4>
+                                    <ul>
+                                        <li>Signature par-3 7th hole over ocean</li>
+                                        <li>Ocean views from every hole</li>
+                                        <li>Clifftop tee boxes and greens</li>
+                                        <li>Luxury lodge accommodation</li>
+                                        <li>World's most photographed golf hole</li>
+                                    </ul>
+                                </div>
+
+                                <div class="course-pricing">
+                                    <span class="price-range">From R2,200</span>
+                                    <span class="price-note">per round</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pearl Valley -->
+                    <div class="course-card" id="pearl-valley">
+                        <div class="course-card__image">
+                            <img src="../images/golf/pearl-valley-winelands.jpg" alt="Pearl Valley golf course with vineyard views" loading="lazy">
+                            <div class="course-card__badge">Winelands</div>
+                        </div>
+                        <div class="course-card__content">
+                            <div class="course-card__header">
+                                <h3 class="course-card__title">Pearl Valley Golf Estate</h3>
+                                <p class="course-card__location">Cape Winelands • Paarl</p>
+                            </div>
+                            <p class="course-card__description">Jack Nicklaus Signature course set in the heart of the Cape Winelands, offering challenging golf surrounded by world-class wine estates.</p>
+                            
+                            <div class="course-details">
+                                <div class="course-stats">
+                                    <div class="stat">
+                                        <span class="stat__label">Signature</span>
+                                        <span class="stat__value">Yes</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__label">Par</span>
+                                        <span class="stat__value">72</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__label">Designer</span>
+                                        <span class="stat__value">Jack Nicklaus</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="course-highlights">
+                                    <h4>Course Highlights</h4>
+                                    <ul>
+                                        <li>Jack Nicklaus Signature design</li>
+                                        <li>Winelands mountain backdrop</li>
+                                        <li>Adjacent wine estate access</li>
+                                        <li>Luxury villa accommodation</li>
+                                        <li>Val de Vie Estate amenities</li>
+                                    </ul>
+                                </div>
+
+                                <div class="course-pricing">
+                                    <span class="price-range">From R1,800</span>
+                                    <span class="price-note">per round</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arabella -->
+                    <div class="course-card" id="arabella">
+                        <div class="course-card__image">
+                            <img src="../images/golf/arabella-lagoon.jpg" alt="Arabella golf course overlooking Bot River Lagoon" loading="lazy">
+                            <div class="course-card__badge">Lagoon Views</div>
+                        </div>
+                        <div class="course-card__content">
+                            <div class="course-card__header">
+                                <h3 class="course-card__title">Arabella Country Estate</h3>
+                                <p class="course-card__location">Overberg • Hermanus</p>
+                            </div>
+                            <p class="course-card__description">Set on the shores of Bot River Lagoon with the Kogelberg Mountains as backdrop, offering whale watching opportunities during season.</p>
+                            
+                            <div class="course-details">
+                                <div class="course-stats">
+                                    <div class="stat">
+                                        <span class="stat__label">Lagoon</span>
+                                        <span class="stat__value">Bot River</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__label">Par</span>
+                                        <span class="stat__value">72</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__label">Designer</span>
+                                        <span class="stat__value">Pete Dye</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="course-highlights">
+                                    <h4>Course Highlights</h4>
+                                    <ul>
+                                        <li>Pete Dye championship design</li>
+                                        <li>Lagoon and mountain views</li>
+                                        <li>Whale watching during season</li>
+                                        <li>Award-winning spa resort</li>
+                                        <li>World-class hospitality</li>
+                                    </ul>
+                                </div>
+
+                                <div class="course-pricing">
+                                    <span class="price-range">From R1,600</span>
+                                    <span class="price-note">per round</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Steenberg -->
+                    <div class="course-card" id="steenberg">
+                        <div class="course-card__image">
+                            <img src="../images/golf/steenberg-table-mountain.jpg" alt="Steenberg golf course with Table Mountain backdrop" loading="lazy">
+                            <div class="course-card__badge">Historic</div>
+                        </div>
+                        <div class="course-card__content">
+                            <div class="course-card__header">
+                                <h3 class="course-card__title">Steenberg Golf Club</h3>
+                                <p class="course-card__location">Cape Town • Constantia</p>
+                            </div>
+                            <p class="course-card__description">Historic wine estate course with Table Mountain views, offering parkland golf combined with wine tasting at South Africa's oldest wine cellar.</p>
+                            
+                            <div class="course-details">
+                                <div class="course-stats">
+                                    <div class="stat">
+                                        <span class="stat__label">Founded</span>
+                                        <span class="stat__value">1682</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__label">Par</span>
+                                        <span class="stat__value">72</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__label">Designer</span>
+                                        <span class="stat__value">Peter Matkovich</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="course-highlights">
+                                    <h4>Course Highlights</h4>
+                                    <ul>
+                                        <li>Historic wine estate setting</li>
+                                        <li>Table Mountain backdrop</li>
+                                        <li>Award-winning wine cellar</li>
+                                        <li>Fine dining restaurant</li>
+                                        <li>Luxury hotel accommodation</li>
+                                    </ul>
+                                </div>
+
+                                <div class="course-pricing">
+                                    <span class="price-range">From R1,400</span>
+                                    <span class="price-note">per round</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Atlantic Beach -->
+                    <div class="course-card" id="atlantic-beach">
+                        <div class="course-card__image">
+                            <img src="../images/golf/atlantic-beach-links.jpg" alt="Atlantic Beach links course along the coastline" loading="lazy">
+                            <div class="course-card__badge">Links</div>
+                        </div>
+                        <div class="course-card__content">
+                            <div class="course-card__header">
+                                <h3 class="course-card__title">Atlantic Beach Golf Estate</h3>
+                                <p class="course-card__location">West Coast • Melkbosstrand</p>
+                            </div>
+                            <p class="course-card__description">True links golf experience along the Atlantic Ocean with challenging coastal winds and spectacular ocean views throughout.</p>
+                            
+                            <div class="course-details">
+                                <div class="course-stats">
+                                    <div class="stat">
+                                        <span class="stat__label">Style</span>
+                                        <span class="stat__value">Links</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__label">Par</span>
+                                        <span class="stat__value">72</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__label">Ocean</span>
+                                        <span class="stat__value">Atlantic</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="course-highlights">
+                                    <h4>Course Highlights</h4>
+                                    <ul>
+                                        <li>Authentic links experience</li>
+                                        <li>Atlantic Ocean views</li>
+                                        <li>Challenging coastal winds</li>
+                                        <li>Natural dune landscape</li>
+                                        <li>Unique West Coast setting</li>
+                                    </ul>
+                                </div>
+
+                                <div class="course-pricing">
+                                    <span class="price-range">From R1,200</span>
+                                    <span class="price-note">per round</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Play-and-Stay Packages -->
+        <section class="play-stay-packages section section--alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section__title">Play-and-Stay Packages</h2>
+                    <p class="section__subtitle">Luxury golf getaways combining championship courses with premium accommodations</p>
+                </div>
+
+                <div class="packages-grid">
+                    <div class="package-card package-card--premium">
+                        <div class="package-card__header">
+                            <h3>Fancourt Golf Resort Experience</h3>
+                            <p class="package-duration">4 Days / 3 Nights</p>
+                            <div class="package-price">
+                                <span class="price-amount">From R18,500</span>
+                                <span class="price-person">per person</span>
+                            </div>
+                        </div>
+                        
+                        <div class="package-content">
+                            <div class="package-accommodation">
+                                <h4>Five-Star Manor House</h4>
+                                <p>Historic elegance with modern luxury amenities, spa services, and fine dining.</p>
+                            </div>
+                            
+                            <div class="package-golf">
+                                <h4>Golf Included</h4>
+                                <ul>
+                                    <li>3 rounds on Fancourt courses (Links, Montagu, Outeniqua)</li>
+                                    <li>Gary Player Golf Academy session</li>
+                                    <li>Professional caddie services</li>
+                                    <li>Golf cart and premium equipment</li>
+                                </ul>
+                            </div>
+
+                            <div class="package-extras">
+                                <h4>Additional Inclusions</h4>
+                                <ul>
+                                    <li>Daily breakfast and one dinner</li>
+                                    <li>Airport transfers in luxury vehicle</li>
+                                    <li>Welcome amenities and golf gifts</li>
+                                    <li>Access to spa and fitness facilities</li>
+                                    <li>Ostrich farm and wine estate tour</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="package-card package-card--premium">
+                        <div class="package-card__header">
+                            <h3>Cape Town Golf & Wine</h3>
+                            <p class="package-duration">5 Days / 4 Nights</p>
+                            <div class="package-price">
+                                <span class="price-amount">From R15,800</span>
+                                <span class="price-person">per person</span>
+                            </div>
+                        </div>
+                        
+                        <div class="package-content">
+                            <div class="package-accommodation">
+                                <h4>Luxury Wine Estate Lodge</h4>
+                                <p>Boutique accommodation in the heart of the Cape Winelands with vineyard views.</p>
+                            </div>
+                            
+                            <div class="package-golf">
+                                <h4>Golf Included</h4>
+                                <ul>
+                                    <li>4 rounds: Pearl Valley, Steenberg, De Zalze, Boschenmeer</li>
+                                    <li>Professional golf instruction session</li>
+                                    <li>Golf transfers and equipment</li>
+                                    <li>Post-round refreshments</li>
+                                </ul>
+                            </div>
+
+                            <div class="package-extras">
+                                <h4>Wine & Cultural Experience</h4>
+                                <ul>
+                                    <li>Private wine tastings at 3 premium estates</li>
+                                    <li>Gourmet wine pairing dinners</li>
+                                    <li>Table Mountain cable car experience</li>
+                                    <li>Cape Peninsula scenic tour</li>
+                                    <li>V&A Waterfront leisure time</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="package-card package-card--premium">
+                        <div class="package-card__header">
+                            <h3>Garden Route Golf Safari</h3>
+                            <p class="package-duration">6 Days / 5 Nights</p>
+                            <div class="package-price">
+                                <span class="price-amount">From R22,000</span>
+                                <span class="price-person">per person</span>
+                            </div>
+                        </div>
+                        
+                        <div class="package-content">
+                            <div class="package-accommodation">
+                                <h4>Multi-Location Luxury</h4>
+                                <p>Premium resorts and lodges across the Garden Route including ocean and mountain views.</p>
+                            </div>
+                            
+                            <div class="package-golf">
+                                <h4>Golf Included</h4>
+                                <ul>
+                                    <li>5 rounds: Fancourt Links, Pinnacle Point, Arabella, George, Knysna</li>
+                                    <li>Helicopter transfer to Pinnacle Point</li>
+                                    <li>Professional caddies at premium courses</li>
+                                    <li>Golf academy sessions available</li>
+                                </ul>
+                            </div>
+
+                            <div class="package-extras">
+                                <h4>Safari & Adventure</h4>
+                                <ul>
+                                    <li>Luxury vehicle transfers throughout</li>
+                                    <li>Whale watching cruise (seasonal)</li>
+                                    <li>Tsitsikamma National Park visit</li>
+                                    <li>Knysna Lagoon cruise and oyster tasting</li>
+                                    <li>Gourmet dining experiences</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="package-card package-card--premium">
+                        <div class="package-card__header">
+                            <h3>Links Golf Adventure</h3>
+                            <p class="package-duration">3 Days / 2 Nights</p>
+                            <div class="package-price">
+                                <span class="price-amount">From R9,500</span>
+                                <span class="price-person">per person</span>
+                            </div>
+                        </div>
+                        
+                        <div class="package-content">
+                            <div class="package-accommodation">
+                                <h4>Coastal Resort</h4>
+                                <p>Ocean-view accommodation near championship links courses with spa facilities.</p>
+                            </div>
+                            
+                            <div class="package-golf">
+                                <h4>Links Golf Focus</h4>
+                                <ul>
+                                    <li>2 rounds: Atlantic Beach Links, West Coast links</li>
+                                    <li>Links golf coaching clinic</li>
+                                    <li>Wind play strategies session</li>
+                                    <li>Traditional links golf experience</li>
+                                </ul>
+                            </div>
+
+                            <div class="package-extras">
+                                <h4>Coastal Experience</h4>
+                                <ul>
+                                    <li>West Coast seafood dining</li>
+                                    <li>Langebaan Lagoon visit</li>
+                                    <li>Flower season tours (seasonal)</li>
+                                    <li>Ocean spa treatments</li>
+                                    <li>Local cultural experiences</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hosted Rounds & Clinics -->
+        <section class="hosted-rounds section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section__title">Hosted Rounds & Clinics</h2>
+                    <p class="section__subtitle">Professional instruction and guided experiences with local golf experts</p>
+                </div>
+
+                <div class="hosted-services">
+                    <div class="hosted-category">
+                        <h3>Professional Golf Clinics</h3>
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L2 7v10c0 5.55 3.84 10 9 10 1.06 0 2.07-.15 3-.42"></path>
+                                        <path d="M22 12.36c-.77 2.7-2.6 5.08-5.12 6.64"></path>
+                                        <circle cx="12" cy="8" r="2"></circle>
+                                    </svg>
+                                </div>
+                                <h4>Swing Analysis Clinic</h4>
+                                <p>Video analysis with PGA professionals, personalized instruction, and technique improvement sessions.</p>
+                                <div class="service-details">
+                                    <span class="duration">3 Hours</span>
+                                    <span class="price">From R1,200</span>
+                                </div>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 2L2 7v10c0 5.55 3.84 10 9 10"></path>
+                                    </svg>
+                                </div>
+                                <h4>Short Game Masterclass</h4>
+                                <p>Intensive putting, chipping, and bunker play instruction to lower your scores around the greens.</p>
+                                <div class="service-details">
+                                    <span class="duration">Half Day</span>
+                                    <span class="price">From R800</span>
+                                </div>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                    </svg>
+                                </div>
+                                <h4>Course Management Clinic</h4>
+                                <p>Strategic play instruction, risk assessment, and decision-making skills for better course navigation.</p>
+                                <div class="service-details">
+                                    <span class="duration">Full Day</span>
+                                    <span class="price">From R1,500</span>
+                                </div>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </div>
+                                <h4>Group Coaching Sessions</h4>
+                                <p>Team building golf clinics for corporate groups, friends, or family with professional instruction.</p>
+                                <div class="service-details">
+                                    <span class="duration">2-4 Hours</span>
+                                    <span class="price">From R2,500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hosted-category">
+                        <h3>Guided Golf Experiences</h3>
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <h4>Hosted Championship Rounds</h4>
+                                <p>Play with a local golf expert who knows the course intimately and can share insider knowledge.</p>
+                                <div class="service-details">
+                                    <span class="duration">Full Round</span>
+                                    <span class="price">From R500</span>
+                                </div>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                                        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"></path>
+                                        <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                                    </svg>
+                                </div>
+                                <h4>Private Golf Concierge</h4>
+                                <p>Personal golf butler service including equipment, course bookings, and concierge services.</p>
+                                <div class="service-details">
+                                    <span class="duration">Full Day</span>
+                                    <span class="price">From R2,000</span>
+                                </div>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                                    </svg>
+                                </div>
+                                <h4>Golf Course Architecture Tours</h4>
+                                <p>Educational rounds focusing on course design, history, and strategic elements with golf architect insights.</p>
+                                <div class="service-details">
+                                    <span class="duration">Half Day</span>
+                                    <span class="price">From R1,800</span>
+                                </div>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                    </svg>
+                                </div>
+                                <h4>Equipment Fitting & Demo</h4>
+                                <p>Professional club fitting sessions with latest equipment demos and purchase recommendations.</p>
+                                <div class="service-details">
+                                    <span class="duration">2 Hours</span>
+                                    <span class="price">From R600</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add-ons Section -->
+        <section class="golf-addons section section--alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section__title">Enhance Your Golf Experience</h2>
+                    <p class="section__subtitle">Add wine, safari, and cultural experiences to create the perfect South African adventure</p>
+                </div>
+
+                <div class="addons-categories">
+                    <!-- Wine Add-ons -->
+                    <div class="addon-category">
+                        <div class="addon-category__header">
+                            <h3>Wine Experiences</h3>
+                            <p>Complement your golf with world-class wine tastings and vineyard tours</p>
+                        </div>
+                        
+                        <div class="addon-items">
+                            <div class="addon-card">
+                                <div class="addon-card__image">
+                                    <img src="../images/add-ons/wine-tasting-stellenbosch.jpg" alt="Wine tasting in Stellenbosch vineyards" loading="lazy">
+                                </div>
+                                <div class="addon-card__content">
+                                    <h4>Stellenbosch Wine Tour</h4>
+                                    <p>Visit 3 premium wine estates with tastings, cellar tours, and gourmet lunch pairings.</p>
+                                    <div class="addon-details">
+                                        <span class="addon-duration">Full Day</span>
+                                        <span class="addon-price">+R850</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addon-card">
+                                <div class="addon-card__image">
+                                    <img src="../images/add-ons/franschhoek-wine-tram.jpg" alt="Franschhoek Wine Tram experience" loading="lazy">
+                                </div>
+                                <div class="addon-card__content">
+                                    <h4>Franschhoek Wine Tram</h4>
+                                    <p>Historic wine tram tour through beautiful French-influenced valley with tastings.</p>
+                                    <div class="addon-details">
+                                        <span class="addon-duration">Half Day</span>
+                                        <span class="addon-price">+R650</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addon-card">
+                                <div class="addon-card__image">
+                                    <img src="../images/add-ons/private-wine-cellar.jpg" alt="Private wine cellar dinner" loading="lazy">
+                                </div>
+                                <div class="addon-card__content">
+                                    <h4>Private Cellar Dinner</h4>
+                                    <p>Exclusive dinner in historic wine cellar with premium wine pairings and sommelier.</p>
+                                    <div class="addon-details">
+                                        <span class="addon-duration">Evening</span>
+                                        <span class="addon-price">+R1,200</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addon-card">
+                                <div class="addon-card__image">
+                                    <img src="../images/add-ons/champagne-tasting.jpg" alt="Champagne tasting at Cap Classique estate" loading="lazy">
+                                </div>
+                                <div class="addon-card__content">
+                                    <h4>Cap Classique Experience</h4>
+                                    <p>Sparkling wine tasting and blending workshop at premium Method Cap Classique producer.</p>
+                                    <div class="addon-details">
+                                        <span class="addon-duration">3 Hours</span>
+                                        <span class="addon-price">+R450</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Safari Add-ons -->
+                    <div class="addon-category">
+                        <div class="addon-category__header">
+                            <h3>Safari & Wildlife</h3>
+                            <p>Experience South Africa's incredible wildlife and natural beauty</p>
+                        </div>
+                        
+                        <div class="addon-items">
+                            <div class="addon-card">
+                                <div class="addon-card__image">
+                                    <img src="../images/add-ons/aquila-safari.jpg" alt="Big Five safari at Aquila Game Reserve" loading="lazy">
+                                </div>
+                                <div class="addon-card__content">
+                                    <h4>Aquila Big Five Safari</h4>
+                                    <p>Full day Big Five safari experience just 2 hours from Cape Town with lunch included.</p>
+                                    <div class="addon-details">
+                                        <span class="addon-duration">Full Day</span>
+                                        <span class="addon-price">+R2,200</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addon-card">
+                                <div class="addon-card__image">
+                                    <img src="../images/add-ons/whale-watching.jpg" alt="Whale watching in Hermanus" loading="lazy">
+                                </div>
+                                <div class="addon-card__content">
+                                    <h4>Hermanus Whale Watching</h4>
+                                    <p>Boat-based whale watching during season (June-December) with marine biologist guide.</p>
+                                    <div class="addon-details">
+                                        <span class="addon-duration">Half Day</span>
+                                        <span class="addon-price">+R950</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addon-card">
+                                <div class="addon-card__image">
+                                    <img src="../images/add-ons/penguin-colony.jpg" alt="African penguin colony at Boulders Beach" loading="lazy">
+                                </div>
+                                <div class="addon-card__content">
+                                    <h4>Penguin Colony Visit</h4>
+                                    <p>Close encounters with African penguins at Boulders Beach plus Cape Point tour.</p>
+                                    <div class="addon-details">
+                                        <span class="addon-duration">Half Day</span>
+                                        <span class="addon-price">+R650</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addon-card">
+                                <div class="addon-card__image">
+                                    <img src="../images/add-ons/shark-cage-diving.jpg" alt="Great White shark cage diving experience" loading="lazy">
+                                </div>
+                                <div class="addon-card__content">
+                                    <h4>Shark Cage Diving</h4>
+                                    <p>Thrilling Great White shark encounter in Gansbaai with professional guides.</p>
+                                    <div class="addon-details">
+                                        <span class="addon-duration">Full Day</span>
+                                        <span class="addon-price">+R2,200</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cultural Add-ons -->
+                    <div class="addon-category">
+                        <div class="addon-category__header">
+                            <h3>Cultural Experiences</h3>
+                            <p>Discover South Africa's rich history, culture, and vibrant communities</p>
+                        </div>
+                        
+                        <div class="addon-items">
+                            <div class="addon-card">
+                                <div class="addon-card__image">
+                                    <img src="../images/add-ons/table-mountain-cable-car.jpg" alt="Table Mountain cable car and city views" loading="lazy">
+                                </div>
+                                <div class="addon-card__content">
+                                    <h4>Table Mountain Experience</h4>
+                                    <p>Cable car to the summit with city views, botanical walk, and sunset options.</p>
+                                    <div class="addon-details">
+                                        <span class="addon-duration">3 Hours</span>
+                                        <span class="addon-price">+R380</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addon-card">
+                                <div class="addon-card__image">
+                                    <img src="../images/add-ons/bo-kaap-cultural-tour.jpg" alt="Colorful Bo-Kaap houses and cultural tour" loading="lazy">
+                                </div>
+                                <div class="addon-card__content">
+                                    <h4>Bo-Kaap Cultural Tour</h4>
+                                    <p>Explore Cape Malay heritage with cooking class, spice tour, and historical insights.</p>
+                                    <div class="addon-details">
+                                        <span class="addon-duration">Half Day</span>
+                                        <span class="addon-price">+R750</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addon-card">
+                                <div class="addon-card__image">
+                                    <img src="../images/add-ons/township-tour.jpg" alt="Authentic township cultural experience" loading="lazy">
+                                </div>
+                                <div class="addon-card__content">
+                                    <h4>Township Cultural Experience</h4>
+                                    <p>Authentic community visit with local guides, traditional lunch, and cultural performances.</p>
+                                    <div class="addon-details">
+                                        <span class="addon-duration">Half Day</span>
+                                        <span class="addon-price">+R680</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addon-card">
+                                <div class="addon-card__image">
+                                    <img src="../images/add-ons/robben-island.jpg" alt="Robben Island historical tour" loading="lazy">
+                                </div>
+                                <div class="addon-card__content">
+                                    <h4>Robben Island Tour</h4>
+                                    <p>Historical island tour including Mandela's prison cell with former political prisoner guide.</p>
+                                    <div class="addon-details">
+                                        <span class="addon-duration">Half Day</span>
+                                        <span class="addon-price">+R590</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Golf Section -->
+        <section id="contact-golf" class="contact-golf section section--dark">
+            <div class="container">
+                <div class="cta-section">
+                    <h2>Build Your Golf Itinerary</h2>
+                    <p>Let our golf specialists design the perfect South African golf experience tailored to your preferences, skill level, and interests. From championship courses to cultural adventures, we'll create your dream golf getaway.</p>
+                    
+                    <div class="golf-contact-options">
+                        <div class="contact-option">
+                            <h3>Golf Specialist Consultation</h3>
+                            <p>Speak directly with our golf experts who know every course personally</p>
+                            <a href="tel:+27211234567" class="btn btn--primary btn--large">Call Our Golf Team</a>
+                        </div>
+                        
+                        <div class="contact-option">
+                            <h3>Custom Itinerary Request</h3>
+                            <p>Tell us your preferences and we'll create a personalized golf experience</p>
+                            <a href="../index.html#contact" class="btn btn--secondary btn--large">Request Custom Quote</a>
+                        </div>
+                    </div>
+
+                    <div class="golf-quick-facts">
+                        <div class="quick-fact">
+                            <span class="fact-number">15+</span>
+                            <span class="fact-label">Championship Courses</span>
+                        </div>
+                        <div class="quick-fact">
+                            <span class="fact-number">5⭐</span>
+                            <span class="fact-label">Luxury Accommodations</span>
+                        </div>
+                        <div class="quick-fact">
+                            <span class="fact-number">365</span>
+                            <span class="fact-label">Days of Golf Weather</span>
+                        </div>
+                        <div class="quick-fact">
+                            <span class="fact-number">100%</span>
+                            <span class="fact-label">Satisfaction Guaranteed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 class="footer__logo">Cape Sports Adventures</h3>
+                    <p class="footer__description">Premier sports tourism and outdoor adventure experiences since 2015. Discover Cape Town through the lens of sport.</p>
+                    <div class="footer__social">
+                        <a href="https://facebook.com/capesportsadventures" class="footer__social-link" aria-label="Follow us on Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/capesportsadventures" class="footer__social-link" aria-label="Follow us on Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.324-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.417-3.324c.876-.876 2.027-1.366 3.324-1.366s2.448.49 3.324 1.366c.927.876 1.417 2.027 1.417 3.324s-.49 2.448-1.417 3.244c-.876.807-2.027 1.297-3.324 1.297zm7.598-5.508c-.224 1.297-.927 2.299-2.027 2.824-.876.42-1.887.49-2.824.21-1.297-.42-2.299-1.487-2.299-2.824 0-1.648 1.347-2.995 2.995-2.995s2.995 1.347 2.995 2.995c0 .28-.07.49-.14.79z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/capesportsadv" class="footer__social-link" aria-label="Follow us on Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/capesportsadventures" class="footer__social-link" aria-label="Subscribe to our YouTube channel">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Services</h4>
+                    <ul class="footer__links-list">
+                        <li><a href="sports-tours.html">Sports Tours</a></li>
+                        <li><a href="golf.html">Golf Experiences</a></li>
+                        <li><a href="fan-packages.html">Fan Packages</a></li>
+                        <li><a href="adventure.html">Adventure Activities</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Golf Courses</h4>
+                    <ul class="footer__links-list">
+                        <li><a href="#fancourt">Fancourt</a></li>
+                        <li><a href="#pinnacle-point">Pinnacle Point</a></li>
+                        <li><a href="#pearl-valley">Pearl Valley</a></li>
+                        <li><a href="#arabella">Arabella</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__contact">
+                    <h4 class="footer__links-title">Golf Specialist</h4>
+                    <p>Cape Town, South Africa</p>
+                    <p><a href="mailto:golf@capesportsadventures.co.za">golf@capesportsadventures.co.za</a></p>
+                    <p><a href="tel:+27211234567">+27 21 123 4567</a></p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <p class="footer__copyright">&copy; 2024 Cape Sports Adventures. All rights reserved.</p>
+                    <div class="footer__legal">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#booking">Booking Terms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
