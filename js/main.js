@@ -1064,39 +1064,44 @@ const tabContents = document.querySelectorAll('.tab__content');
 
 // Tab switching function
 function switchTab(targetTab) {
-    // Remove active class from all buttons and contents
-    tabButtons.forEach(btn => {
-        btn.classList.remove('tab__btn--active');
-        btn.setAttribute('aria-selected', 'false');
-    });
-    
+    // First fade out all content
     tabContents.forEach(content => {
-        content.classList.remove('tab__content--active');
+        content.style.opacity = '0';
     });
     
-    // Add active class to clicked button
-    const activeButton = document.querySelector(`[data-tab="${targetTab}"]`);
-    const activeContent = document.getElementById(`${targetTab}-panel`);
-    
-    if (activeButton && activeContent) {
-        activeButton.classList.add('tab__btn--active');
-        activeButton.setAttribute('aria-selected', 'true');
-        activeContent.classList.add('tab__content--active');
+    // Wait for fade out, then switch content
+    setTimeout(() => {
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => {
+            btn.classList.remove('tab__btn--active');
+            btn.setAttribute('aria-selected', 'false');
+        });
         
-        // Scroll to tabs section for mobile
-        if (window.innerWidth <= 768) {
-            document.querySelector('.sports-tabs').scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'start' 
-            });
+        tabContents.forEach(content => {
+            content.classList.remove('tab__content--active');
+        });
+        
+        // Add active class to clicked button and content
+        const activeButton = document.querySelector(`[data-tab="${targetTab}"]`);
+        const activeContent = document.getElementById(`${targetTab}-panel`);
+        
+        if (activeButton && activeContent) {
+            activeButton.classList.add('tab__btn--active');
+            activeButton.setAttribute('aria-selected', 'true');
+            activeContent.classList.add('tab__content--active');
+            
+            // Remove inline opacity to let CSS transition handle it
+            activeContent.style.opacity = '';
+            
+            // Scroll to tabs section for mobile
+            if (window.innerWidth <= 768) {
+                document.querySelector('.sports-tabs').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }
         }
-        
-        // Trigger fade-in animation
-        activeContent.style.opacity = '0';
-        setTimeout(() => {
-            activeContent.style.opacity = '1';
-        }, 50);
-    }
+    }, 150); // Wait for fade out to complete
 }
 
 // Handle tab button clicks
