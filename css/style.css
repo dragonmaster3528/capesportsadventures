@@ -1771,10 +1771,17 @@ section {
 }
 
 .offerings__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--space-8);
     margin-bottom: var(--space-16);
+    align-items: stretch;
+}
+
+.offerings__grid > .offering-card {
+    flex: 1 1 350px;
+    min-width: 350px;
+    max-width: 400px;
 }
 
 .offering-card {
@@ -1782,6 +1789,8 @@ section {
     border-radius: var(--radius-2xl);
     padding: var(--space-8);
     box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
@@ -1820,6 +1829,7 @@ section {
 .offering-card ul {
     list-style: none;
     margin-bottom: var(--space-6);
+    flex-grow: 1;
 }
 
 .offering-card li {
@@ -1846,6 +1856,7 @@ section {
     border-top: 1px solid var(--color-gray-200);
     padding-top: var(--space-4);
     gap: var(--space-4);
+    margin-top: auto;
 }
 
 .offering-meta .duration,
@@ -1945,7 +1956,7 @@ section {
     }
     
     .offerings__grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: var(--space-6);
     }
     
@@ -1967,8 +1978,8 @@ section {
         padding: var(--space-10);
     }
     
-    .offerings__grid {
-        grid-template-columns: repeat(2, 1fr);
+    .offerings__grid > .offering-card {
+        flex: 1 1 calc(50% - var(--space-4));
     }
     
     .info-grid {
