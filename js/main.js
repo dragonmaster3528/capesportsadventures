@@ -253,7 +253,29 @@ function startAutoSlide() {
     
     autoSlideTimer = setInterval(() => {
         if (!document.hidden && !isAnimating && !isCarouselPaused) {
-            nextSlide();
+            // Force pendulum behavior for auto-advance
+            const slidesToShow = getSlidesToShow();
+            const maxSlide = Math.max(0, carouselSlides.length - slidesToShow);
+            
+            if (carouselDirection === 1) {
+                // Moving forward
+                if (currentSlide < maxSlide) {
+                    updateCarousel(currentSlide + 1);
+                } else {
+                    // Reached the end, reverse direction
+                    carouselDirection = -1;
+                    updateCarousel(currentSlide - 1);
+                }
+            } else {
+                // Moving backward
+                if (currentSlide > 0) {
+                    updateCarousel(currentSlide - 1);
+                } else {
+                    // Reached the beginning, reverse direction
+                    carouselDirection = 1;
+                    updateCarousel(currentSlide + 1);
+                }
+            }
         }
     }, 3600); // 3.6 second intervals
 }
