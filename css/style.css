@@ -373,14 +373,17 @@ a:focus {
     background-color: var(--color-gray-100);
 }
 
-.nav__link.active {
+.nav__link.active,
+.nav .nav__menu .nav__link.active {
     color: var(--color-white) !important;
     background-color: var(--color-primary) !important;
     font-weight: var(--font-weight-semibold) !important;
 }
 
-.nav__link.active::after {
-    display: none;
+.nav__link.active::after,
+.nav__link::after {
+    display: none !important;
+    /* Force cache refresh - remove yellow dots */
 }
 
 @media (min-width: 768px) {
