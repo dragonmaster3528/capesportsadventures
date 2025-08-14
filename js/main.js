@@ -23,7 +23,7 @@ let currentSlide = 0;
 let isAnimating = false;
 let autoSlideTimer;
 let isCarouselPaused = false;
-let carouselDirection = 1; // 1 for forward, -1 for reverse
+let carouselDirection = 1; // 1 for forward, -1 for reverse - pendulum fix
 
 // Mobile Navigation Functions
 function toggleMobileNav() {
