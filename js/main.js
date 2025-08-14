@@ -22,6 +22,8 @@ const accessibilityBtns = document.querySelectorAll('.accessibility__btn');
 let currentSlide = 0;
 let isAnimating = false;
 let autoSlideTimer;
+let isCarouselPaused = false;
+let carouselDirection = 1; // 1 for forward, -1 for reverse
 
 // Mobile Navigation Functions
 function toggleMobileNav() {
@@ -148,9 +150,12 @@ function getSlidesToShow() {
 }
 
 function updateIndicators() {
+    const indicators = document.querySelectorAll('.carousel__indicator');
+    
     indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('carousel__indicator--active', index === currentSlide);
-        indicator.setAttribute('aria-current', index === currentSlide ? 'true' : 'false');
+        const isActive = index === currentSlide;
+        indicator.classList.toggle('carousel__indicator--active', isActive);
+        indicator.setAttribute('aria-current', isActive ? 'true' : 'false');
     });
 }
 
@@ -173,27 +178,67 @@ function nextSlide() {
     const slidesToShow = getSlidesToShow();
     const maxSlide = Math.max(0, carouselSlides.length - slidesToShow);
     
-    if (currentSlide < maxSlide) {
-        updateCarousel(currentSlide + 1);
+    if (carouselDirection === 1) {
+        // Moving forward
+        if (currentSlide < maxSlide) {
+            updateCarousel(currentSlide + 1);
+        } else {
+            // Reached the end, reverse direction
+            carouselDirection = -1;
+            updateCarousel(currentSlide - 1);
+        }
     } else {
-        updateCarousel(0); // Loop back to start
+        // Moving backward
+        if (currentSlide > 0) {
+            updateCarousel(currentSlide - 1);
+        } else {
+            // Reached the beginning, reverse direction
+            carouselDirection = 1;
+            updateCarousel(currentSlide + 1);
+        }
     }
 }
 
 function prevSlide() {
+    const slidesToShow = getSlidesToShow();
+    const maxSlide = Math.max(0, carouselSlides.length - slidesToShow);
+    
     if (currentSlide > 0) {
+        carouselDirection = -1; // Set direction to backward when manually going previous
         updateCarousel(currentSlide - 1);
     } else {
-        // Loop to end
-        const slidesToShow = getSlidesToShow();
-        const maxSlide = Math.max(0, carouselSlides.length - slidesToShow);
+        // Loop to end (keep original manual behavior for prev button)
+        carouselDirection = -1;
         updateCarousel(maxSlide);
     }
 }
 
 function goToSlide(slideIndex) {
+    // Update direction based on where we're going
+    if (slideIndex > currentSlide) {
+        carouselDirection = 1; // Moving forward
+    } else if (slideIndex < currentSlide) {
+        carouselDirection = -1; // Moving backward
+    }
     updateCarousel(slideIndex);
 }
+
+// Manual next button (override auto behavior for manual control)
+function manualNextSlide() {
+    const slidesToShow = getSlidesToShow();
+    const maxSlide = Math.max(0, carouselSlides.length - slidesToShow);
+    
+    if (currentSlide < maxSlide) {
+        carouselDirection = 1; // Set direction to forward when manually going next
+        updateCarousel(currentSlide + 1);
+    } else {
+        // Loop to beginning (keep original manual behavior for next button)
+        carouselDirection = 1;
+        updateCarousel(0);
+    }
+}
+
+// Remove goToView function as we're going back to slide-based navigation
 
 // Auto-slide functionality
 function startAutoSlide() {
@@ -202,14 +247,56 @@ function startAutoSlide() {
     }
     
     autoSlideTimer = setInterval(() => {
-        if (!document.hidden && !isAnimating) {
+        if (!document.hidden && !isAnimating && !isCarouselPaused) {
             nextSlide();
         }
-    }, 5000); // 5 second intervals
+    }, 3600); // 3.6 second intervals
 }
 
 function stopAutoSlide() {
     clearInterval(autoSlideTimer);
+}
+
+// Toggle carousel pause state
+function toggleCarouselPause() {
+    isCarouselPaused = !isCarouselPaused;
+    updateCarouselPauseIndicator();
+    
+    if (isCarouselPaused) {
+        announceToScreenReader('Carousel paused');
+    } else {
+        announceToScreenReader('Carousel resumed');
+    }
+}
+
+// Update visual pause indicator
+function updateCarouselPauseIndicator() {
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+    
+    let pauseIndicator = carousel.querySelector('.carousel__pause-indicator');
+    
+    if (isCarouselPaused) {
+        if (!pauseIndicator) {
+            pauseIndicator = document.createElement('div');
+            pauseIndicator.className = 'carousel__pause-indicator';
+            pauseIndicator.innerHTML = `
+                <div class="carousel__pause-content">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="6" y="4" width="4" height="16"/>
+                        <rect x="14" y="4" width="4" height="16"/>
+                    </svg>
+                    <span>Paused</span>
+                </div>
+            `;
+            carousel.appendChild(pauseIndicator);
+        }
+        pauseIndicator.style.display = 'flex';
+    } else {
+        if (pauseIndicator) {
+            pauseIndicator.style.display = 'none';
+        }
+    }
 }
 
 // Pause auto-slide on hover or focus
@@ -219,6 +306,14 @@ function pauseCarouselOnInteraction() {
         carousel.addEventListener('mouseleave', startAutoSlide);
         carousel.addEventListener('focusin', stopAutoSlide);
         carousel.addEventListener('focusout', startAutoSlide);
+        
+        // Add click listener for manual pause/resume
+        carousel.addEventListener('click', (e) => {
+            // Only toggle if not clicking on a link or button
+            if (!e.target.closest('a, button, .carousel__btn, .carousel__indicator')) {
+                toggleCarouselPause();
+            }
+        });
     }
 }
 
@@ -647,6 +742,31 @@ function handleVisibilityChange() {
     }
 }
 
+// Dynamic indicator generation
+function generateCarouselIndicators() {
+    const indicatorsContainer = document.querySelector('.carousel__indicators');
+    if (!indicatorsContainer || !carouselSlides.length) return;
+    
+    const slidesToShow = getSlidesToShow();
+    const totalSlides = carouselSlides.length;
+    const maxSlide = Math.max(0, totalSlides - slidesToShow);
+    const maxViews = maxSlide + 1; // Number of possible slide positions
+    
+    // Clear existing indicators
+    indicatorsContainer.innerHTML = '';
+    
+    // Generate dynamic indicators
+    for (let i = 0; i < maxViews; i++) {
+        const indicator = document.createElement('button');
+        indicator.className = 'carousel__indicator';
+        if (i === 0) indicator.classList.add('carousel__indicator--active');
+        indicator.setAttribute('data-slide-to', i);
+        indicator.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        indicator.addEventListener('click', () => goToSlide(i));
+        indicatorsContainer.appendChild(indicator);
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Load accessibility preferences first
@@ -682,11 +802,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (nextBtn) {
-        nextBtn.addEventListener('click', nextSlide);
+        nextBtn.addEventListener('click', manualNextSlide);
     }
     
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => goToSlide(index));
+    // Generate dynamic indicators
+    generateCarouselIndicators();
+    
+    // Re-generate indicators on window resize to handle responsive changes
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            generateCarouselIndicators();
+            updateCarousel(currentSlide);
+        }, 250);
     });
     
     // Contact form event listener
@@ -878,6 +1007,42 @@ body.reduced-motion .notification {
         left: 10px;
         max-width: none;
     }
+}
+
+/* Carousel pause indicator */
+.carousel__pause-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.carousel__pause-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.carousel__pause-indicator svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 `;
 

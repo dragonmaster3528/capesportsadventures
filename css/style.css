@@ -422,15 +422,15 @@ a:focus {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-3) var(--space-6);
-    border-radius: var(--radius-md);
+    padding: 12px 24px;
+    border-radius: 6px;
     font-family: var(--font-heading);
-    font-weight: var(--font-weight-semibold);
+    font-weight: bold;
     font-size: var(--font-size-base);
     text-decoration: none;
     border: 2px solid transparent;
     cursor: pointer;
-    transition: var(--transition-fast);
+    transition: all 0.3s ease-in-out;
     line-height: 1.2;
 }
 
@@ -440,18 +440,19 @@ a:focus {
 }
 
 .btn--primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border-color: var(--color-primary);
+    background-color: #A8E063;
+    color: #ffffff;
+    border-color: #A8E063;
+    border-radius: 6px;
 }
 
 .btn--primary:hover {
-    background-color: var(--color-secondary);
-    border-color: var(--color-secondary);
-    color: var(--color-dark);
+    background-color: #8BC34A;
+    border-color: #8BC34A;
+    color: #ffffff;
     text-decoration: none;
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(244, 197, 66, 0.4);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(168, 224, 99, 0.6);
 }
 
 .btn--secondary {
@@ -518,7 +519,7 @@ a:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(29, 77, 46, 0.85) 0%, rgba(244, 197, 66, 0.3) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 .hero__content {
@@ -534,19 +535,22 @@ a:focus {
 }
 
 .hero__title {
-    font-family: var(--font-heading);
+    font-family: 'Montserrat', var(--font-heading);
     font-size: var(--font-size-6xl);
-    font-weight: var(--font-weight-extrabold);
+    font-weight: bold;
     line-height: 1.1;
     margin-bottom: var(--space-6);
+    color: #ffffff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero__subtitle {
+    font-family: 'Montserrat', var(--font-heading);
     font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-normal);
+    font-weight: bold;
     line-height: 1.6;
     margin-bottom: var(--space-8);
+    color: #ffffff;
     opacity: 0.95;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -619,6 +623,9 @@ a:focus {
     border: 2px solid var(--color-gray-200);
     position: relative;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .feature-tile::before {
@@ -680,6 +687,7 @@ a:focus {
     color: var(--color-gray-600);
     line-height: 1.6;
     margin-bottom: var(--space-6);
+    flex-grow: 1;
 }
 
 .feature-tile__link {
@@ -692,6 +700,8 @@ a:focus {
     align-items: center;
     gap: var(--space-2);
     transition: var(--transition-fast);
+    margin-top: auto;
+    align-self: center;
 }
 
 .feature-tile__link:hover {
@@ -840,10 +850,154 @@ a:focus {
 }
 
 .experience-card__content {
-    padding: var(--space-6);
-    flex: 1;
+    padding: 0;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
+}
+
+.springbok-action-image {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto var(--space-4) auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-base);
+}
+
+.experience-card__title {
+    margin-top: 0;
+    padding: 0 var(--space-6);
+}
+
+.experience-card__description {
+    padding: 0 var(--space-6);
+}
+
+.experience-card__details {
+    padding: 0 var(--space-6) var(--space-4) var(--space-6);
+    margin-top: auto;
+}
+
+.experience-card .btn {
+    align-self: flex-start;
+    margin: 0 var(--space-6) var(--space-6) var(--space-6);
+}
+
+.springbok-action-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.fancourt-golf-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: var(--space-4);
+    transition: var(--transition-base);
+}
+
+.fancourt-golf-image:hover {
+    transform: scale(1.02);
+}
+
+.shark-diving-image {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto var(--space-4) auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-base);
+}
+
+.shark-diving-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.table-mountain-image {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto var(--space-4) auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-base);
+}
+
+.table-mountain-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.cape-town-sevens-image {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto var(--space-4) auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-base);
+}
+
+.cape-town-sevens-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.winelands-experience-image {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto var(--space-4) auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-base);
+}
+
+.winelands-experience-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.paragliding-paradise-image {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto var(--space-4) auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-base);
+}
+
+.paragliding-paradise-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.adventures-nature-image {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto var(--space-4) auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-base);
+}
+
+.adventures-nature-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
 
 .experience-card__title {
@@ -1353,6 +1507,18 @@ section {
 @media (max-width: 640px) {
     .feature-tile {
         padding: var(--space-6);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .feature-tile__description {
+        flex-grow: 1;
+    }
+    
+    .feature-tile__link {
+        margin-top: auto;
+        align-self: center;
     }
     
     .feature-tile__icon {
@@ -1367,7 +1533,31 @@ section {
     }
     
     .experience-card__content {
-        padding: var(--space-4);
+        padding: 0;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .experience-card__title,
+    .experience-card__description {
+        padding: 0 var(--space-4);
+    }
+    
+    .experience-card__details {
+        padding: 0 var(--space-4) var(--space-3) var(--space-4);
+        margin-top: auto;
+    }
+    
+    .experience-card .btn {
+        align-self: flex-start;
+        margin: 0 var(--space-4) var(--space-4) var(--space-4);
+    }
+    
+    /* Adjust image height for mobile */
+    .springbok-action-image,
+    .fancourt-golf-image {
+        height: 160px;
     }
     
     .contact__form {
@@ -3195,4 +3385,98 @@ body.high-contrast .addon-item:has(.addon-checkbox:checked) {
 body.high-contrast .pricing-summary {
     background: var(--color-black);
     border: 2px solid var(--color-white);
+}
+
+/* Adventure Card Styles */
+.adventure-card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+    border: 2px solid var(--color-gray-200);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.adventure-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(29, 77, 46, 0.2);
+    border-color: var(--color-primary);
+}
+
+.adventure-card__image {
+    position: relative;
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    background: var(--color-gray-100);
+}
+
+.adventure-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.adventure-card:hover .adventure-card__image img {
+    transform: scale(1.05);
+}
+
+.adventure-card__content {
+    padding: var(--space-6);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adventure Grid */
+.adventure-grid {
+    display: grid;
+    gap: var(--space-8);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .adventure-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .adventure-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .adventure-card--featured {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 0;
+    }
+    
+    .adventure-card--featured .adventure-card__image {
+        height: auto;
+        min-height: 300px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .adventure-card__image {
+        height: 160px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .adventure-card__image {
+        height: 200px;
+    }
+    
+    .adventure-card--featured .adventure-card__image {
+        min-height: 350px;
+    }
 }
