@@ -374,9 +374,9 @@ a:focus {
 }
 
 .nav__link.active {
-    color: var(--color-white);
-    background-color: var(--color-primary);
-    font-weight: var(--font-weight-semibold);
+    color: var(--color-white) !important;
+    background-color: var(--color-primary) !important;
+    font-weight: var(--font-weight-semibold) !important;
 }
 
 .nav__link.active::after {
