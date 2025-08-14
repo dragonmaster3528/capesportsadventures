@@ -382,8 +382,11 @@ a:focus {
 
 .nav__link.active::after,
 .nav__link::after {
+    background-color: transparent !important;
+    width: 0 !important;
+    height: 0 !important;
     display: none !important;
-    /* Force cache refresh - remove yellow dots */
+    /* Force cache refresh - remove yellow dots completely */
 }
 
 @media (min-width: 768px) {
