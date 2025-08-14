@@ -253,9 +253,8 @@ function startAutoSlide() {
     
     autoSlideTimer = setInterval(() => {
         if (!document.hidden && !isAnimating && !isCarouselPaused) {
-            // Force pendulum behavior for auto-advance
-            const slidesToShow = getSlidesToShow();
-            const maxSlide = Math.max(0, carouselSlides.length - slidesToShow);
+            // Simple pendulum behavior - force it to work with total slides
+            const maxSlide = carouselSlides.length - 1; // Use total slides instead of visible calculation
             
             if (carouselDirection === 1) {
                 // Moving forward
