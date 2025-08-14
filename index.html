@@ -16,6 +16,59 @@
             content: none !important;
         }
     </style>
+    <script>
+        // Inline pendulum carousel fix - bypass Netlify processing
+        function initPendulumCarousel() {
+            let currentSlide = 0;
+            let carouselDirection = 1;
+            let autoSlideTimer;
+            
+            const carouselTrack = document.querySelector('.carousel__track');
+            const carouselSlides = document.querySelectorAll('.carousel__slide');
+            
+            if (!carouselTrack || !carouselSlides.length) return;
+            
+            function updateCarousel(slideIndex) {
+                currentSlide = slideIndex;
+                const slideWidth = carouselSlides[0].offsetWidth;
+                const translateX = -(currentSlide * slideWidth);
+                carouselTrack.style.transform = `translateX(${translateX}px)`;
+            }
+            
+            function startPendulum() {
+                clearInterval(autoSlideTimer);
+                autoSlideTimer = setInterval(() => {
+                    const maxSlide = carouselSlides.length - 1;
+                    
+                    if (carouselDirection === 1) {
+                        if (currentSlide < maxSlide) {
+                            updateCarousel(currentSlide + 1);
+                        } else {
+                            carouselDirection = -1;
+                            updateCarousel(currentSlide - 1);
+                        }
+                    } else {
+                        if (currentSlide > 0) {
+                            updateCarousel(currentSlide - 1);
+                        } else {
+                            carouselDirection = 1;
+                            updateCarousel(currentSlide + 1);
+                        }
+                    }
+                }, 3600);
+            }
+            
+            // Start after page loads
+            setTimeout(startPendulum, 1000);
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initPendulumCarousel);
+        } else {
+            initPendulumCarousel();
+        }
+    </script>
 </head>
 <body>
     <header class="header">
