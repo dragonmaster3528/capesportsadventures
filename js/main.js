@@ -58,19 +58,24 @@ function handleHeaderScroll() {
     }
 }
 
-// Active navigation link highlighting
+// Active navigation link highlighting (only for home page with sections)
 function updateActiveNavLink() {
+    // Only run on home page (index.html) - don't interfere with multi-page navigation
+    if (window.location.pathname.includes('pages/')) {
+        return; // Skip this function on subpages
+    }
+    
     const currentSection = getCurrentSection();
     
     navLinks.forEach(link => {
-        link.classList.remove('active');
         const href = link.getAttribute('href');
         
-        // Handle both hash links and page links
-        if (href.startsWith('#') && href === `#${currentSection}`) {
-            link.classList.add('active');
-        } else if (href === 'index.html' && currentSection === 'home') {
-            link.classList.add('active');
+        // Only update links that start with # (section links on home page)
+        if (href.startsWith('#')) {
+            link.classList.remove('active');
+            if (href === `#${currentSection}`) {
+                link.classList.add('active');
+            }
         }
     });
 }
