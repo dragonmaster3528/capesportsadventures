@@ -850,10 +850,10 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCarousel(0);
         pauseCarouselOnInteraction();
         
-        // Start auto-slide if motion is not reduced
-        if (!document.body.classList.contains('reduced-motion')) {
-            startAutoSlide();
-        }
+        // Disable auto-slide due to Netlify processing conflicts
+        // if (!document.body.classList.contains('reduced-motion')) {
+        //     startAutoSlide();
+        // }
     }
     
     // Initialize sports tours functionality
