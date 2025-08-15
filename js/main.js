@@ -23,7 +23,7 @@ let currentSlide = 0;
 let isAnimating = false;
 let autoSlideTimer;
 let isCarouselPaused = false;
-let carouselDirection = 1; // 1 for forward, -1 for reverse - pendulum fix
+let carouselDirection = 1; // 1 for forward, -1 for reverse
 
 // Mobile Navigation Functions
 function toggleMobileNav() {
@@ -253,28 +253,7 @@ function startAutoSlide() {
     
     autoSlideTimer = setInterval(() => {
         if (!document.hidden && !isAnimating && !isCarouselPaused) {
-            // Simple pendulum behavior - force it to work with total slides
-            const maxSlide = carouselSlides.length - 1; // Use total slides instead of visible calculation
-            
-            if (carouselDirection === 1) {
-                // Moving forward
-                if (currentSlide < maxSlide) {
-                    updateCarousel(currentSlide + 1);
-                } else {
-                    // Reached the end, reverse direction
-                    carouselDirection = -1;
-                    updateCarousel(currentSlide - 1);
-                }
-            } else {
-                // Moving backward
-                if (currentSlide > 0) {
-                    updateCarousel(currentSlide - 1);
-                } else {
-                    // Reached the beginning, reverse direction
-                    carouselDirection = 1;
-                    updateCarousel(currentSlide + 1);
-                }
-            }
+            nextSlide();
         }
     }, 3600); // 3.6 second intervals
 }
