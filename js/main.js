@@ -228,19 +228,9 @@ function goToSlide(slideIndex) {
     updateCarousel(slideIndex);
 }
 
-// Manual next button (override auto behavior for manual control)
+// Manual next button (use same pendulum behavior as auto-slide)
 function manualNextSlide() {
-    const slidesToShow = getSlidesToShow();
-    const maxSlide = Math.max(0, carouselSlides.length - slidesToShow);
-    
-    if (currentSlide < maxSlide) {
-        carouselDirection = 1; // Set direction to forward when manually going next
-        updateCarousel(currentSlide + 1);
-    } else {
-        // Loop to beginning (keep original manual behavior for next button)
-        carouselDirection = 1;
-        updateCarousel(0);
-    }
+    nextSlide(); // Just call the same function that auto-slide uses
 }
 
 // Remove goToView function as we're going back to slide-based navigation
