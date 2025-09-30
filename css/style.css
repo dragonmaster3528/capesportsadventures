@@ -674,7 +674,7 @@ a:focus {
     width: 4rem;
     height: 4rem;
     margin: 0 auto var(--space-6);
-    padding: var(--space-3);
+    padding: var(--space-1);
     background: #ea833a;
     border-radius: var(--radius-full);
     display: flex;
@@ -693,16 +693,6 @@ a:focus {
 .feature-tile__icon svg {
     width: 2rem;
     height: 2rem;
-}
-
-.feature-tile__icon--golf {
-    background: #ea833a !important;
-}
-
-.feature-tile__icon--golf img {
-    width: 2rem;
-    height: 2rem;
-    filter: brightness(0) invert(1);
 }
 
 .feature-tile__title {
