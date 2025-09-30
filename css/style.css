@@ -8,19 +8,28 @@
 }
 
 :root {
-    /* Brand Colors */
-    --color-primary: #1D4D2E;           /* Deep Green */
+    /* New Brand Colors */
+    --primary-orange: #ea833a;
+    --primary-blue: #2e61a4;
+    --accent-yellow: #f4c542;
+    --neutral-gray: #f5f5f5;
+    --text-dark: #1f1f1f;
+    --text-light: #ffffff;
+    --link-hover: #1c4a85;
+
+    /* Legacy Brand Colors (kept for compatibility) */
+    --color-primary: #2e61a4;           /* Updated to primary blue */
     --color-primary-light: #2A6B40;     /* Lighter Green */
-    --color-primary-dark: #143D23;      /* Darker Green */
-    --color-secondary: #F4C542;         /* Gold */
+    --color-primary-dark: #1c4a85;      /* Updated to link hover */
+    --color-secondary: #ea833a;         /* Updated to primary orange */
     --color-secondary-light: #F6D366;   /* Lighter Gold */
     --color-secondary-dark: #E6B535;    /* Darker Gold */
-    --color-accent: #F4C542;            /* Gold for highlights */
+    --color-accent: #f4c542;            /* Updated to accent yellow */
     --color-accent-light: #F6D366;      /* Light Gold */
-    --color-background: #F9F6F0;        /* Light Sand */
-    --color-dark: #2C1810;              /* Dark Brown */
+    --color-background: #f5f5f5;        /* Updated to neutral gray */
+    --color-dark: #1f1f1f;              /* Updated to text dark */
     --color-dark-light: #3D2518;        /* Lighter Dark Brown */
-    --color-light: #F9F6F0;             /* Light Sand */
+    --color-light: #f5f5f5;             /* Updated to neutral gray */
     --color-white: #ffffff;
     --color-gray-50: #F9F6F0;            /* Light Sand */
     --color-gray-100: #F0EDE5;           /* Slightly darker sand */
@@ -438,19 +447,19 @@ a:focus {
 }
 
 .btn--primary {
-    background-color: #A8E063;
-    color: #ffffff;
-    border-color: #A8E063;
+    background-color: var(--primary-orange);
+    color: var(--text-light);
+    border-color: var(--primary-orange);
     border-radius: 6px;
 }
 
 .btn--primary:hover {
-    background-color: #8BC34A;
-    border-color: #8BC34A;
-    color: #ffffff;
+    background-color: var(--link-hover);
+    border-color: var(--link-hover);
+    color: var(--text-light);
     text-decoration: none;
     transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(168, 224, 99, 0.6);
+    box-shadow: 0 0 10px rgba(234, 131, 58, 0.6);
 }
 
 .btn--secondary {
@@ -552,7 +561,7 @@ a:focus {
     font-weight: bold;
     line-height: 1.1;
     margin-bottom: var(--space-6);
-    color: #ffffff;
+    color: var(--text-light);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -562,7 +571,7 @@ a:focus {
     font-weight: bold;
     line-height: 1.6;
     margin-bottom: var(--space-8);
-    color: #ffffff;
+    color: var(--text-light);
     opacity: 0.95;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -595,7 +604,7 @@ a:focus {
 /* Feature Tiles */
 .features {
     padding: var(--space-20) 0;
-    background-color: var(--color-white);
+    background-color: var(--neutral-gray);
 }
 
 .features__grid {
@@ -653,8 +662,8 @@ a:focus {
 
 .feature-tile:hover {
     transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 25px 50px -12px rgba(29, 77, 46, 0.25);
-    border-color: var(--color-primary);
+    box-shadow: 0 25px 50px -12px rgba(46, 97, 164, 0.25);
+    border-color: var(--primary-blue);
 }
 
 .feature-tile:hover::before {
@@ -666,19 +675,19 @@ a:focus {
     height: 4rem;
     margin: 0 auto var(--space-6);
     padding: var(--space-3);
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-orange));
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-white);
+    color: var(--text-light);
     transition: var(--transition-base);
-    box-shadow: 0 8px 16px rgba(29, 77, 46, 0.2);
+    box-shadow: 0 8px 16px rgba(46, 97, 164, 0.2);
 }
 
 .feature-tile:hover .feature-tile__icon {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 12px 24px rgba(29, 77, 46, 0.3);
+    box-shadow: 0 12px 24px rgba(46, 97, 164, 0.3);
 }
 
 .feature-tile__icon svg {
@@ -690,13 +699,13 @@ a:focus {
     font-family: var(--font-heading);
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
-    color: var(--color-gray-900);
+    color: var(--primary-blue);
     margin-bottom: var(--space-4);
 }
 
 .feature-tile__description {
     font-size: var(--font-size-base);
-    color: var(--color-gray-600);
+    color: var(--text-dark);
     line-height: 1.6;
     margin-bottom: var(--space-6);
     flex-grow: 1;
@@ -705,7 +714,7 @@ a:focus {
 .feature-tile__link {
     font-family: var(--font-heading);
     font-weight: var(--font-weight-semibold);
-    color: var(--color-primary);
+    color: var(--primary-blue);
     text-decoration: none;
     font-size: var(--font-size-base);
     display: inline-flex;
@@ -717,7 +726,7 @@ a:focus {
 }
 
 .feature-tile__link:hover {
-    color: var(--color-secondary);
+    color: var(--link-hover);
     text-decoration: none;
     transform: translateX(6px);
 }
