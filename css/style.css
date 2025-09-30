@@ -1220,14 +1220,14 @@ a:focus {
     width: 3rem;
     height: 3rem;
     padding: var(--space-2);
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    background: #ea833a;
     border-radius: var(--radius-md);
     color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 4px 8px rgba(29, 77, 46, 0.2);
+    box-shadow: 0 4px 8px rgba(234, 131, 58, 0.2);
 }
 
 .contact__item-icon svg {
