@@ -3538,6 +3538,119 @@ body.high-contrast .pricing-summary {
     color: var(--text-light);
 }
 
+/* =============================================
+   Fan Packages & Adventure Pages Enhancements
+   ============================================= */
+
+/* Section Rhythm - Alternating Backgrounds */
+.section {
+    padding: var(--space-20) 0;
+    transition: background-color var(--transition-base);
+}
+
+.section:not(.section--dark):not(.section--alt) {
+    background-color: var(--color-white);
+}
+
+.section--alt {
+    background-color: var(--neutral-gray);
+}
+
+/* Ensure section--dark styling is preserved */
+.section--dark {
+    background-color: var(--primary-blue) !important;
+    color: var(--text-light);
+}
+
+/* Enhanced Typography for Sections */
+.section:not(.section--dark) h2,
+.section:not(.section--dark) .section__title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+.section:not(.section--dark) p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Typography for dark sections - keep text white */
+.section--dark h2,
+.section--dark .section__title,
+.section--dark p {
+    color: var(--text-light);
+}
+
+.section__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-600);
+    line-height: 1.6;
+}
+
+/* Price Formatting Enhancement for Offering Cards */
+.offering-card .price-from {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-blue);
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-gray-200);
+    display: block;
+}
+
+/* CTA Button Styling - Additional Variants */
+.cta-button {
+    background-color: var(--primary-orange);
+    color: var(--text-light);
+    padding: 0.75em 1.5em;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: var(--link-hover);
+    transform: translateY(-2px);
+}
+
+/* Icon Alignment & Sizing */
+.card-icon {
+    width: 48px;
+    height: 48px;
+    fill: var(--primary-orange);
+    margin-bottom: 0.75em;
+    display: block;
+}
+
+/* Page Intro Section */
+.page-intro {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page-intro h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+}
+
+.page-intro p {
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
+    color: var(--color-gray-700);
+}
+
 /* Adventure Card Styles */
 .adventure-card {
     background: var(--color-white);
