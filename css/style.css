@@ -675,19 +675,19 @@ a:focus {
     height: 4rem;
     margin: 0 auto var(--space-6);
     padding: var(--space-3);
-    background: linear-gradient(135deg, var(--primary-blue), var(--primary-orange));
+    background: #ea833a;
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-light);
     transition: var(--transition-base);
-    box-shadow: 0 8px 16px rgba(46, 97, 164, 0.2);
+    box-shadow: 0 8px 16px rgba(234, 131, 58, 0.2);
 }
 
 .feature-tile:hover .feature-tile__icon {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 12px 24px rgba(46, 97, 164, 0.3);
+    box-shadow: 0 12px 24px rgba(234, 131, 58, 0.3);
 }
 
 .feature-tile__icon svg {
