@@ -823,7 +823,7 @@ a:focus {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    background: #ea833a;
     transform: scaleX(0);
     transition: var(--transition-base);
 }
@@ -1829,7 +1829,7 @@ section {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    background: #ea833a;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--transition-base);
@@ -2452,7 +2452,7 @@ section {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    background: #ea833a;
     transform: scaleX(0);
     transition: transform var(--transition-base);
 }
@@ -2655,6 +2655,9 @@ section {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-xl);
     border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .contact-option h3 {
@@ -2669,6 +2672,20 @@ section {
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: var(--space-6);
     line-height: 1.5;
+    flex-grow: 1;
+}
+
+.contact-option .btn {
+    background-color: var(--primary-orange);
+    color: var(--text-light);
+    border-color: var(--primary-orange);
+    width: 320px;
+    align-self: center;
+}
+
+.contact-option .btn:hover {
+    background-color: var(--link-hover);
+    border-color: var(--link-hover);
 }
 
 .golf-quick-facts {
@@ -3478,19 +3495,47 @@ body.high-contrast .pricing-summary {
 
 .cta-section h2 {
     margin-bottom: var(--space-6);
+    color: inherit;
 }
 
 .cta-section p {
     margin-bottom: var(--space-8);
+    color: inherit;
 }
 
 .cta-actions {
     margin-top: var(--space-6);
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-actions .btn {
+    min-width: 240px;
 }
 
 .section--dark {
     padding-bottom: var(--space-20);
     padding-top: var(--space-20);
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+}
+
+.section--dark .btn,
+.section--dark .btn--primary,
+.section--dark .btn--secondary {
+    background-color: var(--primary-orange);
+    color: var(--text-light);
+    border-color: var(--primary-orange);
+}
+
+.section--dark .btn:hover,
+.section--dark .btn--primary:hover,
+.section--dark .btn--secondary:hover {
+    background-color: var(--link-hover);
+    border-color: var(--link-hover);
+    color: var(--text-light);
 }
 
 /* Adventure Card Styles */
