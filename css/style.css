@@ -695,6 +695,16 @@ a:focus {
     height: 2rem;
 }
 
+.feature-tile__icon--golf {
+    background: #ea833a !important;
+}
+
+.feature-tile__icon--golf img {
+    width: 2rem;
+    height: 2rem;
+    filter: brightness(0) invert(1);
+}
+
 .feature-tile__title {
     font-family: var(--font-heading);
     font-size: var(--font-size-2xl);
