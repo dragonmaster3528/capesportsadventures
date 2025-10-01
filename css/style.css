@@ -2440,31 +2440,15 @@ section {
     padding: var(--space-8);
     text-align: center;
     transition: all var(--transition-base);
-    border: 2px solid transparent;
+    border: 2px solid var(--accent-yellow);
     position: relative;
     overflow: hidden;
 }
 
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #ea833a;
-    transform: scaleX(0);
-    transition: transform var(--transition-base);
-}
-
 .service-card:hover {
     transform: translateY(-5px);
-    border-color: var(--color-secondary-light);
+    border-color: var(--primary-orange);
     box-shadow: var(--shadow-lg);
-}
-
-.service-card:hover::before {
-    transform: scaleX(1);
 }
 
 .service-icon {
