@@ -9,7 +9,7 @@
 
 :root {
     /* New Brand Colors */
-    --primary-orange: #ea833a;
+    --primary-orange: #f97014;
     --primary-blue: #2e61a4;
     --accent-yellow: #f4c542;
     --neutral-gray: #f5f5f5;
@@ -21,7 +21,7 @@
     --color-primary: #2e61a4;           /* Updated to primary blue */
     --color-primary-light: #2A6B40;     /* Lighter Green */
     --color-primary-dark: #1c4a85;      /* Updated to link hover */
-    --color-secondary: #ea833a;         /* Updated to primary orange */
+    --color-secondary: #f97014;         /* Updated to primary orange */
     --color-secondary-light: #F6D366;   /* Lighter Gold */
     --color-secondary-dark: #E6B535;    /* Darker Gold */
     --color-accent: #f4c542;            /* Updated to accent yellow */
@@ -459,7 +459,7 @@ a:focus {
     color: var(--text-light);
     text-decoration: none;
     transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(234, 131, 58, 0.6);
+    box-shadow: 0 0 10px rgba(249, 112, 20, 0.6);
 }
 
 .btn--secondary {
@@ -675,19 +675,19 @@ a:focus {
     height: 4rem;
     margin: 0 auto var(--space-6);
     padding: var(--space-1);
-    background: #ea833a;
+    background: #f97014;
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-light);
     transition: var(--transition-base);
-    box-shadow: 0 8px 16px rgba(234, 131, 58, 0.2);
+    box-shadow: 0 8px 16px rgba(249, 112, 20, 0.2);
 }
 
 .feature-tile:hover .feature-tile__icon {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 12px 24px rgba(234, 131, 58, 0.3);
+    box-shadow: 0 12px 24px rgba(249, 112, 20, 0.3);
 }
 
 .feature-tile__icon svg {
@@ -823,7 +823,7 @@ a:focus {
     left: 0;
     right: 0;
     height: 4px;
-    background: #ea833a;
+    background: #f97014;
     transform: scaleX(0);
     transition: var(--transition-base);
 }
@@ -1220,14 +1220,14 @@ a:focus {
     width: 3rem;
     height: 3rem;
     padding: var(--space-2);
-    background: #ea833a;
+    background: #f97014;
     border-radius: var(--radius-md);
     color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 4px 8px rgba(234, 131, 58, 0.2);
+    box-shadow: 0 4px 8px rgba(249, 112, 20, 0.2);
 }
 
 .contact__item-icon svg {
@@ -1829,7 +1829,7 @@ section {
     left: 0;
     right: 0;
     height: 4px;
-    background: #ea833a;
+    background: #f97014;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--transition-base);
