@@ -16,6 +16,28 @@
             background: #f5f5f5;
             min-height: 100vh;
         }
+        /* Logo */
+        .site-logo {
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            z-index: 100;
+        }
+        .site-logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .site-logo a:hover {
+            opacity: 0.9;
+        }
+        .site-logo .logo-icon {
+            font-size: 1.5rem;
+        }
         /* Login Screen */
         #login-screen {
             display: flex;
@@ -86,6 +108,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem;
+        }
+        .admin-header-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .admin-header-left .home-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+        .admin-header-left .home-link:hover {
+            opacity: 1;
         }
         .admin-header h1 {
             font-size: 1.25rem;
@@ -236,6 +275,13 @@
     </style>
 </head>
 <body>
+    <!-- Site Logo (visible on login screen) -->
+    <div class="site-logo" id="login-logo">
+        <a href="../index.html">
+            <span class="logo-icon">&#9917;</span> Cape Sports Adventures
+        </a>
+    </div>
+
     <!-- Login Screen -->
     <div id="login-screen">
         <div class="login-box">
@@ -250,7 +296,10 @@
     <!-- Admin Panel -->
     <div id="admin-panel">
         <header class="admin-header">
-            <h1>Price Manager</h1>
+            <div class="admin-header-left">
+                <a href="../index.html" class="home-link">&#9917; Cape Sports Adventures</a>
+                <h1>Price Manager</h1>
+            </div>
             <button onclick="logout()">Logout</button>
         </header>
 
@@ -289,6 +338,7 @@
             const password = document.getElementById('password').value;
             if (password === ADMIN_PASSWORD) {
                 document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('login-logo').style.display = 'none';
                 document.getElementById('admin-panel').style.display = 'block';
                 loadPrices();
             } else {
@@ -299,6 +349,7 @@
         function logout() {
             document.getElementById('admin-panel').style.display = 'none';
             document.getElementById('login-screen').style.display = 'flex';
+            document.getElementById('login-logo').style.display = 'block';
             document.getElementById('password').value = '';
             document.getElementById('login-error').style.display = 'none';
         }

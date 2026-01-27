@@ -329,7 +329,16 @@
             </div>
         </section>
 
-        <!-- RUGBY EVENTS -->
+        <!-- Dynamic Events Container - Loaded from /data/events.json -->
+        <div id="events-container">
+            <!-- Events will be dynamically loaded here -->
+            <div style="text-align: center; padding: 4rem 2rem; color: #666;">
+                Loading events...
+            </div>
+        </div>
+
+        <!-- Static fallback (hidden when JS loads) -->
+        <noscript>
         <section id="rugby-events" class="section section--alt sport-section">
             <div class="container">
                 <div class="sport-section-header">
@@ -923,6 +932,7 @@
                 </div>
             </div>
         </section>
+        </noscript>
 
         <!-- CTA Section -->
         <section class="section section--dark">
@@ -987,5 +997,94 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script>
+        // Dynamic Events Loader
+        (function() {
+            const sportConfig = {
+                rugby: { icon: '🏉', title: 'Rugby Events', subtitle: 'International tests, European club rugby, and sevens tournaments', altClass: 'section--alt' },
+                cricket: { icon: '🏏', title: 'Cricket Events', subtitle: 'International tests, T20 leagues, and ODI series', altClass: '' },
+                football: { icon: '⚽', title: 'Football Events', subtitle: 'Bafana Bafana internationals and Premier Soccer League action', altClass: 'section--alt' },
+                hockey: { icon: '🏑', title: 'Hockey Events', subtitle: 'International matches and premier league action', altClass: '' },
+                netball: { icon: '🏀', title: 'Netball Events', subtitle: 'SPAR Proteas internationals and Netball World Cup action', altClass: 'section--alt' }
+            };
+
+            async function loadEvents() {
+                try {
+                    const response = await fetch('../data/events.json');
+                    const events = await response.json();
+                    renderAllSections(events);
+                } catch (error) {
+                    console.error('Failed to load events:', error);
+                }
+            }
+
+            function renderAllSections(events) {
+                const container = document.getElementById('events-container');
+                if (!container) return;
+
+                const sports = ['rugby', 'cricket', 'football', 'hockey', 'netball'];
+                let html = '';
+
+                sports.forEach((sport, index) => {
+                    const config = sportConfig[sport];
+                    const sportEvents = events[sport] || [];
+
+                    html += `
+                        <section id="${sport}-events" class="section ${config.altClass} sport-section">
+                            <div class="container">
+                                <div class="sport-section-header">
+                                    <div class="sport-icon">${config.icon}</div>
+                                    <div>
+                                        <h2>${config.title}</h2>
+                                        <p>${config.subtitle}</p>
+                                    </div>
+                                </div>
+                                <div class="events-grid">
+                                    ${sportEvents.map(event => renderEventCard(event)).join('')}
+                                </div>
+                            </div>
+                        </section>
+                    `;
+
+                    if (index < sports.length - 1) {
+                        html += '<div class="container"><div class="section-divider"></div></div>';
+                    }
+                });
+
+                container.innerHTML = html;
+            }
+
+            function renderEventCard(event) {
+                const featuredClass = event.featured ? 'event-card--featured' : '';
+                return `
+                    <div class="event-card ${featuredClass}">
+                        <div class="event-card__header">
+                            <span class="event-card__badge">${event.badge}</span>
+                            <h3 class="event-card__title">${event.title}</h3>
+                            <div class="event-card__meta">
+                                <span>📅 ${event.date}</span>
+                                <span>📍 ${event.venue}</span>
+                            </div>
+                        </div>
+                        <div class="event-card__body">
+                            <p class="event-card__description">${event.description}</p>
+                            <ul class="event-card__features">
+                                ${event.features.map(f => `<li>${f}</li>`).join('')}
+                            </ul>
+                            <div class="event-card__footer">
+                                <div class="event-card__price">
+                                    ${event.price}
+                                    <span>${event.priceNote || ''}</span>
+                                </div>
+                                <a href="../index.html#contact" class="btn btn--primary btn--small">Enquire Now</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            document.addEventListener('DOMContentLoaded', loadEvents);
+        })();
+    </script>
 </body>
 </html>

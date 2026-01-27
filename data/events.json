@@ -1,0 +1,326 @@
+{
+  "rugby": [
+    {
+      "id": "ultimate-rivalry",
+      "title": "The Ultimate Rivalry: Springboks vs All Blacks",
+      "date": "August 2026",
+      "venue": "Cape Town Stadium",
+      "badge": "Featured",
+      "featured": true,
+      "description": "The greatest rivalry in world rugby returns to Cape Town. Witness the Springboks face the All Blacks in this epic Rugby Championship showdown.",
+      "features": [
+        "Premium hospitality suite access",
+        "Gourmet pre-match dining",
+        "Meet Springbok legends",
+        "Exclusive merchandise pack",
+        "Post-match celebration event"
+      ],
+      "price": "R4,500",
+      "priceNote": "per person"
+    },
+    {
+      "id": "nations-championship",
+      "title": "Nations Championship 2026",
+      "date": "July - September 2026",
+      "venue": "Multiple Venues",
+      "badge": "New",
+      "featured": true,
+      "description": "The groundbreaking new global rugby competition featuring the world's top nations. Be part of history as South Africa competes in this landmark tournament.",
+      "features": [
+        "Multi-match package options",
+        "VIP hospitality at all SA venues",
+        "Priority ticket access",
+        "Accommodation packages available",
+        "Tournament merchandise bundle"
+      ],
+      "price": "R3,200",
+      "priceNote": "per match"
+    },
+    {
+      "id": "champions-cup",
+      "title": "European Champions Cup - SA Derbies",
+      "date": "December 2025 - May 2026",
+      "venue": "SA Stadiums",
+      "badge": "Club Rugby",
+      "featured": false,
+      "description": "Watch the Stormers, Sharks, and Bulls compete against Europe's elite in the prestigious Champions Cup. Historic European club rugby comes to South Africa.",
+      "features": [
+        "Premium match-day hospitality",
+        "Access to team warm-ups",
+        "Stadium tour included",
+        "European rugby atmosphere"
+      ],
+      "price": "R2,800",
+      "priceNote": "per person"
+    },
+    {
+      "id": "urc",
+      "title": "United Rugby Championship",
+      "date": "September 2025 - June 2026",
+      "venue": "Multiple Venues",
+      "badge": "Club Rugby",
+      "featured": false,
+      "description": "Follow the Stormers, Sharks, Bulls, and Lions through the URC season. Experience the best club rugby competition in the world.",
+      "features": [
+        "Season ticket hospitality options",
+        "Derby match specials",
+        "Playoff package deals",
+        "Corporate suite hire"
+      ],
+      "price": "R1,500",
+      "priceNote": "per person"
+    },
+    {
+      "id": "cape-town-sevens",
+      "title": "HSBC Cape Town Sevens",
+      "date": "December 2025",
+      "venue": "DHL Stadium",
+      "badge": "Hot Ticket",
+      "featured": true,
+      "description": "The world's greatest sevens party returns to the Mother City! Two days of fast-paced rugby, incredible atmosphere, and world-class entertainment.",
+      "features": [
+        "Weekend hospitality passes",
+        "VIP village access",
+        "Premium seating allocation",
+        "All-inclusive food & beverages",
+        "After-party invitations"
+      ],
+      "price": "R3,500",
+      "priceNote": "per weekend"
+    },
+    {
+      "id": "cape-town-10s",
+      "title": "Cape Town 10s",
+      "date": "January 2026",
+      "venue": "Hamilton's Rugby Club",
+      "badge": "Festival",
+      "featured": false,
+      "description": "The world's largest amateur rugby festival. Over 200 teams from 20+ countries compete in this legendary social rugby tournament.",
+      "features": [
+        "VIP tent hospitality",
+        "Festival ground access",
+        "Live entertainment",
+        "Team registration assistance"
+      ],
+      "price": "R1,200",
+      "priceNote": "per day"
+    },
+    {
+      "id": "springbok-home-tests",
+      "title": "Springbok Home Internationals",
+      "date": "June - November 2026",
+      "venue": "Various Stadiums",
+      "badge": "International",
+      "featured": false,
+      "description": "Experience the world champions at home. All Springbok test matches against touring nations and Rugby Championship fixtures.",
+      "features": [
+        "Hospitality packages for all tests",
+        "Premium and standard options",
+        "Multi-match discounts",
+        "Travel packages available"
+      ],
+      "price": "R2,500",
+      "priceNote": "per person"
+    }
+  ],
+  "cricket": [
+    {
+      "id": "sa20",
+      "title": "Betway SA20 2026",
+      "date": "January - February 2026",
+      "venue": "Multiple Venues",
+      "badge": "T20 League",
+      "featured": true,
+      "description": "South Africa's premier T20 franchise league featuring the world's best cricketers. Fast-paced action, electric atmospheres, and world-class entertainment.",
+      "features": [
+        "Franchise hospitality suites",
+        "Premium seating at Newlands",
+        "Meet the international stars",
+        "Multi-match packages",
+        "Finals weekend specials"
+      ],
+      "price": "R1,800",
+      "priceNote": "per match"
+    },
+    {
+      "id": "proteas-tests",
+      "title": "Proteas Test Series",
+      "date": "December 2025 - March 2026",
+      "venue": "Newlands & Other Venues",
+      "badge": "Test Cricket",
+      "featured": true,
+      "description": "Experience the pinnacle of cricket at iconic venues. Watch the Proteas battle touring nations in the ultimate test of skill and endurance.",
+      "features": [
+        "Hospitality box experiences",
+        "Table Mountain views at Newlands",
+        "Traditional cricket lunch included",
+        "Ground tours and museum access",
+        "Day or full match packages"
+      ],
+      "price": "R2,200",
+      "priceNote": "per day"
+    },
+    {
+      "id": "proteas-odi-t20",
+      "title": "Proteas ODI & T20I Series",
+      "date": "Throughout 2026",
+      "venue": "Multiple Venues",
+      "badge": "International",
+      "featured": false,
+      "description": "White-ball cricket action featuring the Proteas against touring nations. High-octane entertainment in limited-overs format.",
+      "features": [
+        "Premium hospitality packages",
+        "Day/night match experiences",
+        "Family-friendly options",
+        "Corporate entertaining suites"
+      ],
+      "price": "R1,500",
+      "priceNote": "per person"
+    }
+  ],
+  "football": [
+    {
+      "id": "bafana-wc-qualifiers",
+      "title": "Bafana Bafana World Cup Qualifiers",
+      "date": "2025 - 2026 Campaign",
+      "venue": "Cape Town Stadium",
+      "badge": "International",
+      "featured": true,
+      "description": "Support Bafana Bafana on their journey to the FIFA World Cup. Experience the passion of South African football at its finest.",
+      "features": [
+        "VIP hospitality lounges",
+        "Premium sideline seating",
+        "Pre-match entertainment",
+        "Official merchandise",
+        "Player appearance opportunities"
+      ],
+      "price": "R2,000",
+      "priceNote": "per person"
+    },
+    {
+      "id": "psl",
+      "title": "Premier Soccer League",
+      "date": "August 2025 - May 2026",
+      "venue": "Various Stadiums",
+      "badge": "League",
+      "featured": false,
+      "description": "Experience the passion of South African club football. Big matches featuring Kaizer Chiefs, Orlando Pirates, Mamelodi Sundowns, and Cape Town City.",
+      "features": [
+        "Derby match hospitality",
+        "Season ticket arrangements",
+        "Stadium experience packages",
+        "Local football culture tours"
+      ],
+      "price": "R800",
+      "priceNote": "per person"
+    },
+    {
+      "id": "afcon-qualifiers",
+      "title": "AFCON Qualifiers",
+      "date": "2025 - 2026",
+      "venue": "Home Venues",
+      "badge": "International",
+      "featured": false,
+      "description": "Watch Bafana Bafana compete for Africa Cup of Nations qualification. Crucial continental clashes with electric atmospheres.",
+      "features": [
+        "Hospitality packages available",
+        "Premium seating options",
+        "Continental football atmosphere",
+        "Group booking discounts"
+      ],
+      "price": "R1,200",
+      "priceNote": "per person"
+    }
+  ],
+  "hockey": [
+    {
+      "id": "fih-pro-league",
+      "title": "FIH Hockey Pro League",
+      "date": "February - March 2026",
+      "venue": "Cape Town",
+      "badge": "International",
+      "featured": true,
+      "description": "World-class international hockey comes to Cape Town. Watch the SA Men's and Women's teams compete against the world's best in this prestigious league.",
+      "features": [
+        "Premium pitch-side seating",
+        "Hospitality marquee access",
+        "Meet the national teams",
+        "Multi-match packages",
+        "Family-friendly atmosphere"
+      ],
+      "price": "R800",
+      "priceNote": "per person"
+    },
+    {
+      "id": "sa-hockey-ipt",
+      "title": "SA Hockey Interprovincial",
+      "date": "July - August 2026",
+      "venue": "Various Venues",
+      "badge": "Domestic",
+      "featured": false,
+      "description": "South Africa's premier domestic hockey tournament. Provincial teams battle for national supremacy in this intense competition.",
+      "features": [
+        "Tournament hospitality",
+        "Full competition access",
+        "Club networking opportunities",
+        "Talent scouting possibilities"
+      ],
+      "price": "R500",
+      "priceNote": "per day"
+    }
+  ],
+  "netball": [
+    {
+      "id": "netball-world-cup",
+      "title": "Netball World Cup 2027",
+      "date": "July 2027",
+      "venue": "Cape Town",
+      "badge": "Major Event",
+      "featured": true,
+      "description": "South Africa hosts the Netball World Cup! A once-in-a-generation opportunity to see the world's best netballers compete on home soil. Early bird packages now available.",
+      "features": [
+        "Early bird hospitality packages",
+        "Pool stage and knockout options",
+        "Finals weekend specials",
+        "Team hotel and transport packages",
+        "Commemorative merchandise"
+      ],
+      "price": "R2,500",
+      "priceNote": "per session"
+    },
+    {
+      "id": "spar-proteas-tests",
+      "title": "SPAR Proteas Test Series",
+      "date": "Throughout 2026",
+      "venue": "Various Venues",
+      "badge": "International",
+      "featured": false,
+      "description": "Watch the SPAR Proteas, one of the world's top-ranked teams, compete in international test series against global netball powers.",
+      "features": [
+        "Court-side hospitality",
+        "Meet the Proteas players",
+        "Premium seating packages",
+        "Series packages available"
+      ],
+      "price": "R600",
+      "priceNote": "per person"
+    },
+    {
+      "id": "telkom-netball-league",
+      "title": "Telkom Netball League",
+      "date": "August - October 2026",
+      "venue": "Various Venues",
+      "badge": "Domestic",
+      "featured": false,
+      "description": "South Africa's premier domestic netball competition. Watch the country's best provincial teams compete for the national title.",
+      "features": [
+        "League match hospitality",
+        "Finals weekend packages",
+        "Corporate hosting options",
+        "Group bookings welcome"
+      ],
+      "price": "R400",
+      "priceNote": "per person"
+    }
+  ]
+}
