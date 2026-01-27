@@ -690,7 +690,8 @@ a:focus {
     box-shadow: 0 12px 24px rgba(249, 112, 20, 0.3);
 }
 
-.feature-tile__icon svg {
+.feature-tile__icon svg,
+.feature-tile__icon img {
     width: 2rem;
     height: 2rem;
 }
@@ -1553,7 +1554,8 @@ section {
         margin: 0 auto var(--space-4);
     }
     
-    .feature-tile__icon svg {
+    .feature-tile__icon svg,
+    .feature-tile__icon img {
         width: 1.5rem;
         height: 1.5rem;
     }
@@ -2665,6 +2667,7 @@ section {
     border-color: var(--primary-orange);
     width: 320px;
     align-self: center;
+    margin-top: auto;
 }
 
 .contact-option .btn:hover {

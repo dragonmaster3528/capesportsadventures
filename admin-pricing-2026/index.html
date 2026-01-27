@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Price Manager | Cape Sports Adventures Admin</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+        /* Login Screen */
+        #login-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #004eb9 0%, #003080 100%);
+        }
+        .login-box {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .login-box h1 {
+            color: #004eb9;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        .login-box p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .login-box input:focus {
+            outline: none;
+            border-color: #004eb9;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background: #f97014;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .login-box button:hover {
+            background: #e06010;
+        }
+        .login-error {
+            color: #dc3545;
+            margin-top: 1rem;
+            display: none;
+        }
+        /* Admin Panel */
+        #admin-panel {
+            display: none;
+        }
+        .admin-header {
+            background: #004eb9;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .admin-header h1 {
+            font-size: 1.25rem;
+        }
+        .admin-header button {
+            background: #f97014;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .admin-header button:hover {
+            background: #e06010;
+        }
+        .admin-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .instructions {
+            background: #e8f4fd;
+            border: 1px solid #b8daff;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .instructions h3 {
+            color: #004eb9;
+            margin-bottom: 0.5rem;
+        }
+        .instructions ol {
+            margin-left: 1.25rem;
+            color: #444;
+        }
+        .instructions li {
+            margin-bottom: 0.25rem;
+        }
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-primary {
+            background: #f97014;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #e06010;
+        }
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        .btn-success:hover {
+            background: #218838;
+        }
+        .status-message {
+            padding: 10px 16px;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        /* Price Table */
+        .section-group {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .section-header {
+            background: #004eb9;
+            color: white;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            background: #f8f9fa;
+            text-align: left;
+            padding: 12px 16px;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 2px solid #dee2e6;
+        }
+        td {
+            padding: 10px 16px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:hover {
+            background: #f8f9fa;
+        }
+        .item-name {
+            color: #333;
+        }
+        .item-category {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .price-input {
+            width: 140px;
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: monospace;
+        }
+        .price-input:focus {
+            outline: none;
+            border-color: #004eb9;
+        }
+        .price-input.changed {
+            border-color: #f97014;
+            background: #fff8f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen">
+        <div class="login-box">
+            <h1>Cape Sports Adventures</h1>
+            <p>Price Manager - Admin Access</p>
+            <input type="password" id="password" placeholder="Enter admin password" onkeypress="if(event.key==='Enter')login()">
+            <button onclick="login()">Access Admin Panel</button>
+            <p class="login-error" id="login-error">Incorrect password. Please try again.</p>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel">
+        <header class="admin-header">
+            <h1>Price Manager</h1>
+            <button onclick="logout()">Logout</button>
+        </header>
+
+        <div class="admin-content">
+            <div class="instructions">
+                <h3>How to Update Prices</h3>
+                <ol>
+                    <li>Edit any price in the table below (all prices are in South African Rand)</li>
+                    <li>Changed prices will be highlighted in orange</li>
+                    <li>Click "Download Updated Prices" to save the new prices.json file</li>
+                    <li>Upload the new prices.json file to /data/ folder on your hosting (Netlify)</li>
+                </ol>
+            </div>
+
+            <div id="status-message" class="status-message"></div>
+
+            <div class="actions">
+                <button class="btn btn-primary" onclick="downloadPrices()">Download Updated Prices</button>
+                <button class="btn btn-secondary" onclick="resetChanges()">Reset All Changes</button>
+            </div>
+
+            <div id="prices-container">
+                <!-- Tables will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple password - in production, use proper authentication
+        const ADMIN_PASSWORD = 'C@pe2026!';
+
+        let pricesData = null;
+        let originalData = null;
+
+        function login() {
+            const password = document.getElementById('password').value;
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('admin-panel').style.display = 'block';
+                loadPrices();
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
+        }
+
+        function logout() {
+            document.getElementById('admin-panel').style.display = 'none';
+            document.getElementById('login-screen').style.display = 'flex';
+            document.getElementById('password').value = '';
+            document.getElementById('login-error').style.display = 'none';
+        }
+
+        async function loadPrices() {
+            try {
+                const response = await fetch('../data/prices.json');
+                pricesData = await response.json();
+                originalData = JSON.parse(JSON.stringify(pricesData)); // Deep copy
+                renderPricesTables();
+            } catch (error) {
+                showStatus('Error loading prices: ' + error.message, 'error');
+            }
+        }
+
+        function renderPricesTables() {
+            const container = document.getElementById('prices-container');
+            container.innerHTML = '';
+
+            const sections = [
+                { key: 'homepage', title: 'Homepage', subsections: ['carousel', 'addons'] },
+                { key: 'sports_tours', title: 'Sports Tours', subsections: ['rugby', 'cricket', 'football', 'hockey', 'netball'] },
+                { key: 'golf', title: 'Golf Page', subsections: ['courses', 'packages', 'clinics', 'guided', 'wine_addons', 'safari_addons', 'cultural_addons'] },
+                { key: 'adventure', title: 'Adventure Page', subsections: ['ocean', 'mountain', 'cultural', 'packages'] },
+                { key: 'fan_packages', title: 'Fan Packages', subsections: null }
+            ];
+
+            sections.forEach(section => {
+                const group = document.createElement('div');
+                group.className = 'section-group';
+
+                const header = document.createElement('div');
+                header.className = 'section-header';
+                header.textContent = section.title;
+                group.appendChild(header);
+
+                const table = document.createElement('table');
+                table.innerHTML = `
+                    <thead>
+                        <tr>
+                            <th style="width:40%">Item</th>
+                            <th style="width:30%">Category</th>
+                            <th style="width:30%">Price (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                `;
+                const tbody = table.querySelector('tbody');
+
+                if (section.subsections) {
+                    section.subsections.forEach(sub => {
+                        const subData = pricesData[section.key][sub];
+                        if (subData) {
+                            Object.entries(subData).forEach(([itemKey, price]) => {
+                                tbody.appendChild(createPriceRow(section.key, sub, itemKey, price));
+                            });
+                        }
+                    });
+                } else {
+                    Object.entries(pricesData[section.key]).forEach(([itemKey, price]) => {
+                        tbody.appendChild(createPriceRow(section.key, null, itemKey, price));
+                    });
+                }
+
+                group.appendChild(table);
+                container.appendChild(group);
+            });
+        }
+
+        function createPriceRow(section, subsection, itemKey, price) {
+            const row = document.createElement('tr');
+            const itemName = formatItemName(itemKey);
+            const categoryName = subsection ? formatItemName(subsection) : '-';
+            const dataPath = subsection ? `${section}.${subsection}.${itemKey}` : `${section}.${itemKey}`;
+
+            row.innerHTML = `
+                <td class="item-name">${itemName}</td>
+                <td class="item-category">${categoryName}</td>
+                <td>
+                    <input type="text"
+                           class="price-input"
+                           value="${price}"
+                           data-path="${dataPath}"
+                           data-original="${price}"
+                           onchange="handlePriceChange(this)"
+                           oninput="handlePriceChange(this)">
+                </td>
+            `;
+            return row;
+        }
+
+        function formatItemName(key) {
+            return key
+                .replace(/_/g, ' ')
+                .replace(/\b\w/g, c => c.toUpperCase());
+        }
+
+        function handlePriceChange(input) {
+            const path = input.dataset.path;
+            const original = input.dataset.original;
+            const newValue = input.value;
+
+            // Update the data
+            setNestedValue(pricesData, path, newValue);
+
+            // Visual feedback
+            if (newValue !== original) {
+                input.classList.add('changed');
+            } else {
+                input.classList.remove('changed');
+            }
+        }
+
+        function setNestedValue(obj, path, value) {
+            const keys = path.split('.');
+            let current = obj;
+            for (let i = 0; i < keys.length - 1; i++) {
+                current = current[keys[i]];
+            }
+            current[keys[keys.length - 1]] = value;
+        }
+
+        function downloadPrices() {
+            const json = JSON.stringify(pricesData, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'prices.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showStatus('prices.json downloaded! Upload it to your /data/ folder on Netlify.', 'success');
+        }
+
+        function resetChanges() {
+            pricesData = JSON.parse(JSON.stringify(originalData));
+            renderPricesTables();
+            showStatus('All changes have been reset.', 'success');
+        }
+
+        function showStatus(message, type) {
+            const el = document.getElementById('status-message');
+            el.textContent = message;
+            el.className = 'status-message ' + (type === 'error' ? 'status-error' : 'status-success');
+            el.style.display = 'block';
+            setTimeout(() => { el.style.display = 'none'; }, 5000);
+        }
+    </script>
+</body>
+</html>

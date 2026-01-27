@@ -3,17 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional sports tours for rugby, cricket, football, and hockey teams - training, fixtures, and cultural experiences">
+    <meta name="description" content="Professional sports tours for rugby, cricket, football, hockey, and netball teams - training, fixtures, and cultural experiences">
     <title>Sports Tours | Cape Sports Adventures</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        .nav__link::after, .nav__link.active::after, a.nav__link::after { 
-            display: none !important; 
-            background: transparent !important; 
+        .nav__link::after, .nav__link.active::after, a.nav__link::after {
+            display: none !important;
+            background: transparent !important;
             content: none !important;
+        }
+        /* Temporarily hidden - remove this rule to show durations and prices again */
+        .offering-meta {
+            display: none !important;
+        }
+        /* Signature Events Banner */
+        .events-banner {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #e06010 100%);
+            border-radius: var(--radius-xl);
+            padding: 1.25rem 2rem;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            box-shadow: 0 4px 15px rgba(249, 112, 20, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .events-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 112, 20, 0.4);
+        }
+        .events-banner__content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .events-banner__icon {
+            font-size: 2rem;
+            background: rgba(255,255,255,0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .events-banner__text h4 {
+            color: white;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 0.25rem 0;
+        }
+        .events-banner__text p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .events-banner__btn {
+            background: white;
+            color: var(--primary-orange);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+            white-space: nowrap;
+        }
+        .events-banner__btn:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: scale(1.05);
+        }
+        @media (max-width: 640px) {
+            .events-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            .events-banner__content {
+                flex-direction: column;
+            }
+            .events-banner__btn {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -32,6 +111,7 @@
                 <ul class="nav__menu" id="nav-menu" role="navigation" aria-label="Main navigation">
                     <li><a href="../index.html" class="nav__link">Home</a></li>
                     <li><a href="sports-tours.html" class="nav__link active" aria-current="page" style="background-color: var(--primary-blue) !important; color: var(--text-light) !important;">Sports Tours</a></li>
+                    <li><a href="events.html" class="nav__link">Sports Events</a></li>
                     <li><a href="golf.html" class="nav__link">Golf</a></li>
                     <li><a href="fan-packages.html" class="nav__link">Fan Packages</a></li>
                     <li><a href="adventure.html" class="nav__link">Adventure</a></li>
@@ -87,14 +167,23 @@
                         <span class="tab__icon">⚽</span>
                         Football
                     </button>
-                    <button class="tab__btn" 
-                            data-tab="hockey" 
-                            role="tab" 
-                            aria-selected="false" 
+                    <button class="tab__btn"
+                            data-tab="hockey"
+                            role="tab"
+                            aria-selected="false"
                             aria-controls="hockey-panel"
                             id="hockey-tab">
                         <span class="tab__icon">🏑</span>
                         Hockey
+                    </button>
+                    <button class="tab__btn"
+                            data-tab="netball"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="netball-panel"
+                            id="netball-tab">
+                        <span class="tab__icon">🏀</span>
+                        Netball
                     </button>
                 </div>
 
@@ -111,6 +200,17 @@
                             <h2>Rugby Tours</h2>
                             <p>Experience the passion and intensity of South African rugby. Train with professional coaches, compete against local teams, and witness the legendary Springbok spirit firsthand.</p>
                         </div>
+                    </div>
+
+                    <div class="events-banner">
+                        <div class="events-banner__content">
+                            <div class="events-banner__icon">🏉</div>
+                            <div class="events-banner__text">
+                                <h4>Upcoming Signature Rugby Events</h4>
+                                <p>Springbok Tests, HSBC Sevens, URC, Champions Cup & more</p>
+                            </div>
+                        </div>
+                        <a href="events.html#rugby-events" class="events-banner__btn">View Rugby Events →</a>
                     </div>
 
                     <div class="offerings">
@@ -197,6 +297,17 @@
                         </div>
                     </div>
 
+                    <div class="events-banner">
+                        <div class="events-banner__content">
+                            <div class="events-banner__icon">🏏</div>
+                            <div class="events-banner__text">
+                                <h4>Upcoming Signature Cricket Events</h4>
+                                <p>Betway SA20, Proteas Test Series, ODI & T20 Internationals</p>
+                            </div>
+                        </div>
+                        <a href="events.html#cricket-events" class="events-banner__btn">View Cricket Events →</a>
+                    </div>
+
                     <div class="offerings">
                         <h3>Cricket Tour Offerings</h3>
                         <div class="offerings__grid" style="display: flex !important; flex-wrap: wrap !important; gap: 2rem !important; align-items: stretch !important; justify-content: center !important;">
@@ -279,6 +390,17 @@
                             <h2>Football Tours</h2>
                             <p>Train at world-class facilities and compete in the football-mad atmosphere of Cape Town. Experience the passion of South African football culture and Bafana Bafana pride.</p>
                         </div>
+                    </div>
+
+                    <div class="events-banner">
+                        <div class="events-banner__content">
+                            <div class="events-banner__icon">⚽</div>
+                            <div class="events-banner__text">
+                                <h4>Upcoming Signature Football Events</h4>
+                                <p>Bafana Bafana World Cup Qualifiers, PSL & AFCON Qualifiers</p>
+                            </div>
+                        </div>
+                        <a href="events.html#football-events" class="events-banner__btn">View Football Events →</a>
                     </div>
 
                     <div class="offerings">
@@ -365,6 +487,17 @@
                         </div>
                     </div>
 
+                    <div class="events-banner">
+                        <div class="events-banner__content">
+                            <div class="events-banner__icon">🏑</div>
+                            <div class="events-banner__text">
+                                <h4>Upcoming Signature Hockey Events</h4>
+                                <p>FIH Pro League, SA Interprovincial Championships</p>
+                            </div>
+                        </div>
+                        <a href="events.html#hockey-events" class="events-banner__btn">View Hockey Events →</a>
+                    </div>
+
                     <div class="offerings">
                         <h3>Hockey Tour Offerings</h3>
                         <div class="offerings__grid" style="display: flex !important; flex-wrap: wrap !important; gap: 2rem !important; align-items: stretch !important; justify-content: center !important;">
@@ -430,6 +563,101 @@
                         </div>
                         <div class="offerings__cta">
                             <a href="../index.html#contact" class="btn btn--primary btn--large">Customize Your Hockey Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Netball Tab Content -->
+                <div class="tab__content"
+                     id="netball-panel"
+                     role="tabpanel"
+                     aria-labelledby="netball-tab">
+                    <div class="sport-hero">
+                        <div class="sport-hero__image">
+                            <img src="../images/netball/SPAR Proteas 1.jpg" alt="SPAR Proteas netball team in action" loading="lazy">
+                        </div>
+                        <div class="sport-hero__content">
+                            <h2>Netball Tours</h2>
+                            <p>Experience the fast-paced, dynamic world of South African netball. Our professional netball tours offer competitive fixtures against top local teams, expert coaching from SPAR Proteas staff, and exclusive behind-the-scenes access to one of the country's most popular women's sports.</p>
+                        </div>
+                    </div>
+
+                    <div class="events-banner">
+                        <div class="events-banner__content">
+                            <div class="events-banner__icon">🏀</div>
+                            <div class="events-banner__text">
+                                <h4>Upcoming Signature Netball Events</h4>
+                                <p>Netball World Cup 2027, SPAR Proteas Tests, Telkom League</p>
+                            </div>
+                        </div>
+                        <a href="events.html#netball-events" class="events-banner__btn">View Netball Events →</a>
+                    </div>
+
+                    <div class="offerings">
+                        <h3>Netball Tour Offerings</h3>
+                        <div class="offerings__grid" style="display: flex !important; flex-wrap: wrap !important; gap: 2rem !important; align-items: stretch !important; justify-content: center !important;">
+                            <div class="offering-card" style="display: flex !important; flex-direction: column !important; flex: 1 1 400px !important; min-width: 350px !important; max-width: 450px !important;">
+                                <h4>SPAR Proteas Experience</h4>
+                                <ul>
+                                    <li>Training sessions with national team coaches</li>
+                                    <li>Meet & greet with SPAR Proteas players</li>
+                                    <li>Behind-the-scenes access to national training</li>
+                                    <li>VIP tickets to Proteas matches</li>
+                                    <li>Exclusive merchandise and memorabilia</li>
+                                </ul>
+                                <div class="offering-meta" style="margin-top: auto !important;">
+                                    <span class="duration">4-6 Days</span>
+                                    <span class="price">From R12,500</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card" style="display: flex !important; flex-direction: column !important; flex: 1 1 400px !important; min-width: 350px !important; max-width: 450px !important;">
+                                <h4>Club Competition Tour</h4>
+                                <ul>
+                                    <li>Fixtures against premier SA netball clubs</li>
+                                    <li>Tournament-style competition format</li>
+                                    <li>Professional umpiring and scoring</li>
+                                    <li>Indoor and outdoor court experiences</li>
+                                    <li>Post-match social and networking events</li>
+                                </ul>
+                                <div class="offering-meta" style="margin-top: auto !important;">
+                                    <span class="duration">7-10 Days</span>
+                                    <span class="price">From R7,800</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card" style="display: flex !important; flex-direction: column !important; flex: 1 1 400px !important; min-width: 350px !important; max-width: 450px !important;">
+                                <h4>Skills Development Academy</h4>
+                                <ul>
+                                    <li>Position-specific training programs</li>
+                                    <li>Shooting and goal-scoring clinics</li>
+                                    <li>Defensive strategies and footwork drills</li>
+                                    <li>Fitness and conditioning workshops</li>
+                                    <li>Individual performance analysis</li>
+                                </ul>
+                                <div class="offering-meta" style="margin-top: auto !important;">
+                                    <span class="duration">5 Days</span>
+                                    <span class="price">From R5,200</span>
+                                </div>
+                            </div>
+
+                            <div class="offering-card" style="display: flex !important; flex-direction: column !important; flex: 1 1 400px !important; min-width: 350px !important; max-width: 450px !important;">
+                                <h4>School Exchange Program</h4>
+                                <ul>
+                                    <li>Partner with top SA netball schools</li>
+                                    <li>Combined training and match fixtures</li>
+                                    <li>Educational and cultural exchange</li>
+                                    <li>Leadership and teamwork workshops</li>
+                                    <li>Lasting international friendships</li>
+                                </ul>
+                                <div class="offering-meta" style="margin-top: auto !important;">
+                                    <span class="duration">10-14 Days</span>
+                                    <span class="price">From R6,500</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="offerings__cta">
+                            <a href="../index.html#contact" class="btn btn--primary btn--large">Customize Your Netball Tour</a>
                         </div>
                     </div>
                 </div>

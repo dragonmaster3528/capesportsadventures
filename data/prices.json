@@ -1,0 +1,136 @@
+{
+  "homepage": {
+    "carousel": {
+      "springbok_rugby": "R2,500",
+      "fancourt_golf": "R8,500",
+      "shark_diving": "R2,200",
+      "table_mountain": "R650",
+      "cape_town_sevens": "R1,800",
+      "winelands": "R1,100",
+      "paragliding": "R1,000",
+      "canoeing": "R750"
+    },
+    "addons": {
+      "shark_diving": "R2,200",
+      "table_mountain_hike": "R650",
+      "paragliding": "R1,200",
+      "helicopter": "R1,800",
+      "winelands_tour": "R1,100",
+      "township_tour": "R650",
+      "cape_peninsula": "R950",
+      "city_tour": "R350",
+      "private_guide": "R1,500/day",
+      "luxury_transport": "R800/day",
+      "premium_accommodation": "R2,500/night",
+      "gourmet_dining": "R850/meal"
+    }
+  },
+  "sports_tours": {
+    "rugby": {
+      "springbok_vip": "R15,000",
+      "team_exchange": "R8,500",
+      "youth_development": "R6,200",
+      "coaching_masterclass": "R4,800"
+    },
+    "cricket": {
+      "proteas_experience": "R12,500",
+      "club_tournament": "R7,800",
+      "academy_skills": "R5,400",
+      "womens_program": "R4,900"
+    },
+    "football": {
+      "bafana_elite": "R11,200",
+      "premier_league": "R8,900",
+      "youth_camp": "R5,700",
+      "womens_initiative": "R4,600"
+    },
+    "hockey": {
+      "national_squad": "R9,800",
+      "club_competition": "R7,200",
+      "skills_intensive": "R4,500",
+      "school_partnership": "R6,800"
+    },
+    "netball": {
+      "spar_proteas": "R12,500",
+      "club_competition": "R7,800",
+      "skills_academy": "R5,200",
+      "school_exchange": "R6,500"
+    }
+  },
+  "golf": {
+    "courses": {
+      "fancourt": "R2,800",
+      "pinnacle_point": "R2,200",
+      "pearl_valley": "R1,800",
+      "arabella": "R1,600",
+      "steenberg": "R1,400",
+      "atlantic_beach": "R1,200"
+    },
+    "packages": {
+      "fancourt_resort": "R18,500",
+      "cape_town_wine": "R15,800",
+      "garden_route_safari": "R22,000",
+      "links_adventure": "R9,500"
+    },
+    "clinics": {
+      "swing_analysis": "R1,200",
+      "short_game": "R800",
+      "course_management": "R1,500",
+      "group_coaching": "R2,500"
+    },
+    "guided": {
+      "hosted_rounds": "R500",
+      "private_concierge": "R2,000",
+      "architecture_tours": "R1,800",
+      "equipment_fitting": "R600"
+    },
+    "wine_addons": {
+      "stellenbosch_tour": "R850",
+      "franschhoek_tram": "R650",
+      "cellar_dinner": "R1,200",
+      "cap_classique": "R450"
+    },
+    "safari_addons": {
+      "aquila_safari": "R2,200",
+      "whale_watching": "R950",
+      "penguin_colony": "R650",
+      "shark_cage": "R2,200"
+    },
+    "cultural_addons": {
+      "table_mountain": "R380",
+      "bo_kaap": "R750",
+      "township": "R680",
+      "robben_island": "R590"
+    }
+  },
+  "adventure": {
+    "ocean": {
+      "shark_diving": "R2,200",
+      "kayaking": "R450",
+      "seal_snorkeling": "R550",
+      "whale_watching": "R1,800"
+    },
+    "mountain": {
+      "table_mountain_hike": "R650",
+      "paragliding": "R1,200",
+      "rock_climbing": "R750",
+      "helicopter_tour": "R1,800"
+    },
+    "cultural": {
+      "cape_peninsula": "R950",
+      "township_tour": "R650",
+      "winelands": "R1,100",
+      "historic_city": "R350"
+    },
+    "packages": {
+      "ultimate_adventure": "R8,500",
+      "adrenaline_seeker": "R5,800"
+    }
+  },
+  "fan_packages": {
+    "springbok_experience": "R2,500",
+    "sevens_weekend": "R1,800",
+    "cricket_experience": "R1,200",
+    "local_derbies": "R800"
+  }
+}
