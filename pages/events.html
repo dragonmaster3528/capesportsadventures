@@ -37,6 +37,15 @@
         /* Sport Section Headers */
         .sport-section {
             scroll-margin-top: 100px;
+            transition: opacity 0.3s ease;
+        }
+        .sport-section.section-hidden .events-grid,
+        .sport-section.section-hidden .section-divider-below {
+            display: none;
+        }
+        .sport-section.section-hidden .sport-section-header {
+            margin-bottom: var(--space-4);
+            opacity: 0.7;
         }
         .sport-section-header {
             display: flex;
@@ -45,6 +54,28 @@
             margin-bottom: var(--space-8);
             padding-bottom: var(--space-4);
             border-bottom: 3px solid var(--primary-orange);
+        }
+        .sport-section-header__content {
+            flex: 1;
+        }
+        .section-toggle-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+            white-space: nowrap;
+        }
+        .section-toggle-btn:hover {
+            background: var(--primary-orange);
+            transform: scale(1.05);
+        }
+        .sport-section.section-hidden .section-toggle-btn {
+            background: var(--primary-orange);
         }
         .sport-section-header .sport-icon {
             font-size: 2.5rem;
@@ -998,8 +1029,9 @@
 
     <script src="../js/main.js"></script>
     <script>
-        // Dynamic Events Loader
+        // Dynamic Events Loader with Show/Hide and localStorage persistence
         (function() {
+            const STORAGE_KEY = 'capesports_events_prefs';
             const sportConfig = {
                 rugby: { icon: '🏉', title: 'Rugby Events', subtitle: 'International tests, European club rugby, and sevens tournaments', altClass: 'section--alt' },
                 cricket: { icon: '🏏', title: 'Cricket Events', subtitle: 'International tests, T20 leagues, and ODI series', altClass: '' },
@@ -1008,14 +1040,69 @@
                 netball: { icon: '🏀', title: 'Netball Events', subtitle: 'SPAR Proteas internationals and Netball World Cup action', altClass: 'section--alt' }
             };
 
+            // Load preferences from localStorage
+            function loadPreferences() {
+                try {
+                    const saved = localStorage.getItem(STORAGE_KEY);
+                    return saved ? JSON.parse(saved) : {};
+                } catch (e) {
+                    return {};
+                }
+            }
+
+            // Save preferences to localStorage
+            function savePreferences(prefs) {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+                } catch (e) {
+                    console.warn('Could not save preferences:', e);
+                }
+            }
+
+            // Toggle section visibility
+            window.toggleSportSection = function(sport) {
+                const section = document.getElementById(sport + '-events');
+                const btn = document.getElementById('toggle-' + sport);
+                const prefs = loadPreferences();
+
+                if (section.classList.contains('section-hidden')) {
+                    section.classList.remove('section-hidden');
+                    btn.textContent = 'Hide Section';
+                    prefs[sport] = true;
+                } else {
+                    section.classList.add('section-hidden');
+                    btn.textContent = 'Show Section';
+                    prefs[sport] = false;
+                }
+
+                savePreferences(prefs);
+            };
+
             async function loadEvents() {
                 try {
                     const response = await fetch('../data/events.json');
                     const events = await response.json();
                     renderAllSections(events);
+                    applyStoredPreferences();
                 } catch (error) {
                     console.error('Failed to load events:', error);
                 }
+            }
+
+            function applyStoredPreferences() {
+                const prefs = loadPreferences();
+                const sports = ['rugby', 'cricket', 'football', 'hockey', 'netball'];
+
+                sports.forEach(sport => {
+                    if (prefs[sport] === false) {
+                        const section = document.getElementById(sport + '-events');
+                        const btn = document.getElementById('toggle-' + sport);
+                        if (section && btn) {
+                            section.classList.add('section-hidden');
+                            btn.textContent = 'Show Section';
+                        }
+                    }
+                });
             }
 
             function renderAllSections(events) {
@@ -1034,10 +1121,11 @@
                             <div class="container">
                                 <div class="sport-section-header">
                                     <div class="sport-icon">${config.icon}</div>
-                                    <div>
+                                    <div class="sport-section-header__content">
                                         <h2>${config.title}</h2>
                                         <p>${config.subtitle}</p>
                                     </div>
+                                    <button id="toggle-${sport}" class="section-toggle-btn" onclick="toggleSportSection('${sport}')">Hide Section</button>
                                 </div>
                                 <div class="events-grid">
                                     ${sportEvents.map(event => renderEventCard(event)).join('')}
