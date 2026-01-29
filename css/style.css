@@ -3291,9 +3291,21 @@ body.high-contrast textarea:focus {
 
 /* Pricing Summary */
 .pricing-summary {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    background: var(--primary-blue);
     color: var(--color-white);
     padding: 2rem;
+}
+
+.pricing-summary .btn--secondary {
+    background: var(--color-white);
+    color: var(--primary-blue);
+    border: 2px solid var(--color-white);
+}
+
+.pricing-summary .btn--secondary:hover {
+    background: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
 }
 
 .pricing-summary__content {
