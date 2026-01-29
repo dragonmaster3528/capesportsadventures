@@ -2634,8 +2634,9 @@ section {
 }
 
 .addon-price {
-    background-color: var(--color-secondary-light);
-    color: var(--color-primary);
+    background-color: var(--color-white);
+    color: var(--primary-orange);
+    border: 2px solid var(--primary-orange);
 }
 
 /* Contact Golf Section */
@@ -3275,11 +3276,17 @@ body.high-contrast textarea:focus {
 .addon-price {
     font-weight: 600;
     font-size: var(--font-size-sm);
-    color: var(--color-secondary-dark);
+    color: var(--primary-orange);
+    background-color: var(--color-white);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--primary-orange);
 }
 
 .addon-item:has(.addon-checkbox:checked) .addon-price {
-    color: var(--color-secondary);
+    color: var(--color-white);
+    background-color: var(--primary-orange);
+    border-color: var(--color-white);
 }
 
 /* Pricing Summary */
