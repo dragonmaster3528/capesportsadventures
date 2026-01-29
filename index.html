@@ -629,15 +629,29 @@
                         </div>
                         
                         <div class="form__group">
-                            <label for="service" class="form__label">Service Interest</label>
-                            <select id="service" name="service" class="form__input" required>
-                                <option value="">Select a service</option>
-                                <option value="sports-tours">Sports Tours</option>
-                                <option value="golf">Golf Experiences</option>
-                                <option value="fan-packages">Fan Packages</option>
-                                <option value="adventure">Adventure Activities</option>
-                                <option value="corporate">Corporate Travel</option>
-                            </select>
+                            <label class="form__label">Services of Interest (select all that apply)</label>
+                            <div class="form__checkbox-group">
+                                <label class="form__checkbox-label">
+                                    <input type="checkbox" name="services" value="sports-tours">
+                                    <span>Sports Tours</span>
+                                </label>
+                                <label class="form__checkbox-label">
+                                    <input type="checkbox" name="services" value="golf">
+                                    <span>Golf Experiences</span>
+                                </label>
+                                <label class="form__checkbox-label">
+                                    <input type="checkbox" name="services" value="fan-packages">
+                                    <span>Fan Packages</span>
+                                </label>
+                                <label class="form__checkbox-label">
+                                    <input type="checkbox" name="services" value="adventure">
+                                    <span>Adventure Activities</span>
+                                </label>
+                                <label class="form__checkbox-label">
+                                    <input type="checkbox" name="services" value="corporate">
+                                    <span>Corporate Travel</span>
+                                </label>
+                            </div>
                         </div>
                         
                         <div class="form__group">
