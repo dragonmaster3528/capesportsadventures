@@ -250,6 +250,7 @@ a:focus {
     z-index: 1000;
     transition: all var(--transition-base);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding-top: 20px;
 }
 
 .header--scrolled {
@@ -413,7 +414,8 @@ a:focus {
         transform: none;
         padding: 0;
         border: none;
-        gap: var(--space-6);
+        gap: var(--space-5);
+        margin-left: 100px;
         order: 1;
     }
     
@@ -2811,7 +2813,7 @@ section {
 /* Skip to content link */
 .skip-link {
     position: absolute;
-    top: -40px;
+    top: -100px;
     left: 6px;
     background: var(--color-primary);
     color: var(--color-white);
