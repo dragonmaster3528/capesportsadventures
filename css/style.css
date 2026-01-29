@@ -3308,6 +3308,20 @@ body.high-contrast textarea:focus {
     border-color: var(--color-white);
 }
 
+.pricing-summary .btn--primary {
+    background-color: var(--primary-orange);
+    color: var(--color-white);
+    border-color: var(--primary-orange);
+    opacity: 1;
+    filter: none;
+}
+
+.pricing-summary .btn--primary:hover {
+    background-color: var(--link-hover);
+    border-color: var(--link-hover);
+    opacity: 1;
+}
+
 .pricing-summary__content {
     display: flex;
     justify-content: space-between;
