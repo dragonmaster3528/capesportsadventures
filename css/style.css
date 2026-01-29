@@ -4139,3 +4139,272 @@ body.hide-pricing .offering-meta {
         transform: translateX(0) translateY(0);
     }
 }
+
+/* =============================================
+   Itinerary Panel - Enhanced Item Layout
+   ============================================= */
+
+/* Restructured item layout */
+.itinerary-panel__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--neutral-gray);
+    border-radius: var(--radius-lg);
+}
+
+.itinerary-panel__item-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-3);
+}
+
+.itinerary-panel__item-unit-price {
+    font-size: var(--font-size-xs);
+    color: #666;
+    margin-top: 4px;
+    display: block;
+}
+
+.itinerary-panel__item-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-3);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Adventurer Controls */
+.itinerary-panel__adventurers {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.itinerary-panel__adventurers label {
+    font-size: var(--font-size-xs);
+    color: #666;
+    font-weight: 500;
+}
+
+.itinerary-panel__adventurers-control {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: var(--radius-md);
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.adventurer-btn {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.adventurer-btn:hover {
+    background: var(--neutral-gray);
+}
+
+.adventurer-btn:active {
+    background: #ddd;
+}
+
+.adventurer-btn--minus {
+    border-right: 1px solid #ddd;
+}
+
+.adventurer-btn--plus {
+    border-left: 1px solid #ddd;
+}
+
+.adventurer-input {
+    width: 40px;
+    height: 32px;
+    text-align: center;
+    border: none;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-dark);
+    background: transparent;
+    -moz-appearance: textfield;
+}
+
+.adventurer-input::-webkit-outer-spin-button,
+.adventurer-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.adventurer-input:focus {
+    outline: none;
+    background: #f0f8ff;
+}
+
+/* Subtotal Display */
+.itinerary-panel__item-subtotal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.subtotal-label {
+    font-size: var(--font-size-xs);
+    color: #666;
+    font-weight: 500;
+}
+
+.subtotal-value {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+/* Total Display in Footer */
+.itinerary-panel__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #003080 100%);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+}
+
+.itinerary-panel__total-label {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: white;
+}
+
+.itinerary-panel__total-value {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--accent-yellow);
+}
+
+/* Disclaimer Text */
+.itinerary-panel__disclaimer {
+    font-size: var(--font-size-xs);
+    color: #666;
+    line-height: 1.5;
+    text-align: center;
+    padding: var(--space-3);
+    background: #f9f9f9;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    border-left: 3px solid var(--primary-orange);
+}
+
+/* Group Quote Popup */
+.group-quote-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.group-quote-popup--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.group-quote-popup__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.group-quote-popup__content {
+    position: relative;
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.group-quote-popup--visible .group-quote-popup__content {
+    transform: scale(1);
+}
+
+.group-quote-popup__content h4 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+}
+
+.group-quote-popup__content p {
+    font-size: var(--font-size-base);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+}
+
+.group-quote-popup__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.group-quote-popup__actions .btn {
+    width: 100%;
+}
+
+/* Mobile adjustments for enhanced panel */
+@media (max-width: 480px) {
+    .itinerary-panel__item-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-3);
+    }
+
+    .itinerary-panel__adventurers {
+        justify-content: space-between;
+    }
+
+    .itinerary-panel__item-subtotal {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .itinerary-panel__total {
+        flex-direction: column;
+        gap: var(--space-2);
+        text-align: center;
+    }
+
+    .group-quote-popup__content {
+        padding: var(--space-6);
+    }
+}

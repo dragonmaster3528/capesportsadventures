@@ -4,6 +4,7 @@
 
 (function() {
     const STORAGE_KEY = 'capesports_itinerary';
+    const MAX_ADVENTURERS = 10;
 
     // Initialize cart from localStorage
     let cart = loadCart();
@@ -11,7 +12,13 @@
     function loadCart() {
         try {
             const saved = localStorage.getItem(STORAGE_KEY);
-            return saved ? JSON.parse(saved) : [];
+            if (!saved) return [];
+            const items = JSON.parse(saved);
+            // Ensure all items have adventurers property (for backwards compatibility)
+            return items.map(item => ({
+                ...item,
+                adventurers: item.adventurers || 1
+            }));
         } catch (e) {
             return [];
         }
@@ -25,6 +32,19 @@
         }
     }
 
+    // Extract numeric price from price string (e.g., "From R2,500" -> 2500)
+    function extractPrice(priceString) {
+        if (!priceString) return null;
+        const match = priceString.replace(/,/g, '').match(/R\s*(\d+)/);
+        return match ? parseInt(match[1], 10) : null;
+    }
+
+    // Format price for display
+    function formatPrice(amount) {
+        if (amount === null || amount === undefined) return 'TBD';
+        return 'R' + amount.toLocaleString();
+    }
+
     // Generate unique ID for a card based on its content
     function generateCardId(card) {
         const title = card.querySelector('h3, h4, .event-card__title, .offering-card h4')?.textContent?.trim() || '';
@@ -35,7 +55,7 @@
     // Get card details for storage
     function getCardDetails(card) {
         const title = card.querySelector('h3, h4, .event-card__title')?.textContent?.trim() || 'Unknown Item';
-        const price = card.querySelector('.event-card__price, .price-from, .price-range, .offering-meta span:last-child')?.textContent?.trim() || '';
+        const priceText = card.querySelector('.event-card__price, .price-from, .price-range, .offering-meta span:last-child')?.textContent?.trim() || '';
         const page = window.location.pathname.split('/').pop().replace('.html', '');
         const pageNames = {
             'events': 'Sports Events',
@@ -48,9 +68,11 @@
         return {
             id: generateCardId(card),
             title: title,
-            price: price,
+            priceText: priceText,
+            priceValue: extractPrice(priceText),
             page: pageNames[page] || page,
             pageUrl: window.location.pathname,
+            adventurers: 1,
             addedAt: new Date().toISOString()
         };
     }
@@ -58,6 +80,103 @@
     // Check if item is in cart
     function isInCart(cardId) {
         return cart.some(item => item.id === cardId);
+    }
+
+    // Get cart item by ID
+    function getCartItem(cardId) {
+        return cart.find(item => item.id === cardId);
+    }
+
+    // Update adventurer count for an item
+    function updateAdventurerCount(cardId, count) {
+        const item = getCartItem(cardId);
+        if (item) {
+            if (count > MAX_ADVENTURERS) {
+                showGroupQuotePopup();
+                return false;
+            }
+            item.adventurers = Math.max(1, Math.min(count, MAX_ADVENTURERS));
+            saveCart();
+            renderPanelItems();
+            return true;
+        }
+        return false;
+    }
+
+    // Calculate total
+    function calculateTotal() {
+        let total = 0;
+        let hasTBD = false;
+
+        cart.forEach(item => {
+            if (item.priceValue != null) {
+                total += item.priceValue * (item.adventurers || 1);
+            } else {
+                hasTBD = true;
+            }
+        });
+
+        return { total, hasTBD };
+    }
+
+    // Show group quote popup
+    function showGroupQuotePopup() {
+        // Remove existing popup
+        document.querySelectorAll('.group-quote-popup').forEach(p => p.remove());
+
+        const popup = document.createElement('div');
+        popup.className = 'group-quote-popup';
+        popup.innerHTML = `
+            <div class="group-quote-popup__overlay"></div>
+            <div class="group-quote-popup__content">
+                <h4>Group Quote Request</h4>
+                <p>For groups larger than ${MAX_ADVENTURERS} people, please request a custom group quote from our team.</p>
+                <div class="group-quote-popup__actions">
+                    <button class="btn btn--primary group-quote-popup__request">Request Group Quote</button>
+                    <button class="btn btn--secondary group-quote-popup__cancel">Cancel</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(popup);
+        setTimeout(() => popup.classList.add('group-quote-popup--visible'), 10);
+
+        // Event handlers
+        popup.querySelector('.group-quote-popup__overlay').addEventListener('click', () => {
+            popup.classList.remove('group-quote-popup--visible');
+            setTimeout(() => popup.remove(), 300);
+        });
+
+        popup.querySelector('.group-quote-popup__cancel').addEventListener('click', () => {
+            popup.classList.remove('group-quote-popup--visible');
+            setTimeout(() => popup.remove(), 300);
+        });
+
+        popup.querySelector('.group-quote-popup__request').addEventListener('click', () => {
+            popup.classList.remove('group-quote-popup--visible');
+            setTimeout(() => popup.remove(), 300);
+
+            // Close the itinerary panel
+            closePanel();
+
+            // Build group quote message
+            const itemsList = cart.map(item => `- ${item.title} (${item.page})`).join('\n');
+            const message = `GROUP QUOTE REQUEST\n\nI'm interested in a group quote for more than ${MAX_ADVENTURERS} people for the following items:\n\n${itemsList}\n\nPlease contact me to discuss group pricing and availability.`;
+
+            // Navigate to contact form
+            const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
+
+            if (isHomePage) {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                    prefillContactForm(message);
+                }
+            } else {
+                sessionStorage.setItem('prefill_message', message);
+                window.location.href = '../index.html#contact';
+            }
+        });
     }
 
     // Add item to cart
@@ -190,7 +309,11 @@
                     <div class="itinerary-panel__items"></div>
                 </div>
                 <div class="itinerary-panel__footer">
-                    <p class="itinerary-panel__summary"><span class="item-count">0</span> items selected</p>
+                    <div class="itinerary-panel__total">
+                        <span class="itinerary-panel__total-label">Estimated Total:</span>
+                        <span class="itinerary-panel__total-value">R0</span>
+                    </div>
+                    <p class="itinerary-panel__disclaimer">These are rough estimates based on current market conditions, exchange rates, and availability. One of our Cape Experience experts will contact you with specific pricing once you submit your itinerary request.</p>
                     <button class="itinerary-panel__submit btn btn--primary">Submit Inquiry</button>
                     <button class="itinerary-panel__clear btn btn--secondary">Clear All</button>
                 </div>
@@ -246,45 +369,96 @@
 
     // Render items in panel
     function renderPanelItems() {
-        const container = document.querySelector('.itinerary-panel__items');
-        const countEl = document.querySelector('.itinerary-panel__summary .item-count');
-        const submitBtn = document.querySelector('.itinerary-panel__submit');
+        var container = document.querySelector('.itinerary-panel__items');
+        var totalValueEl = document.querySelector('.itinerary-panel__total-value');
+        var submitBtn = document.querySelector('.itinerary-panel__submit');
 
         if (!container) return;
 
         if (cart.length === 0) {
-            container.innerHTML = `
-                <div class="itinerary-panel__empty">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                    </svg>
-                    <p>Your itinerary is empty</p>
-                    <span>Browse our experiences and add items you're interested in</span>
-                </div>
-            `;
+            container.innerHTML = '<div class="itinerary-panel__empty">' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">' +
+                '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>' +
+                '<polyline points="14 2 14 8 20 8"></polyline>' +
+                '</svg>' +
+                '<p>Your itinerary is empty</p>' +
+                '<span>Browse our experiences and add items you\'re interested in</span>' +
+                '</div>';
             if (submitBtn) submitBtn.disabled = true;
+            if (totalValueEl) totalValueEl.textContent = 'R0';
         } else {
-            container.innerHTML = cart.map(item => `
-                <div class="itinerary-panel__item" data-id="${item.id}">
-                    <div class="itinerary-panel__item-info">
-                        <span class="itinerary-panel__item-page">${item.page}</span>
-                        <h4 class="itinerary-panel__item-title">${item.title}</h4>
-                        ${item.price ? `<span class="itinerary-panel__item-price">${item.price}</span>` : ''}
-                    </div>
-                    <button class="itinerary-panel__item-remove" data-id="${item.id}" aria-label="Remove item">&times;</button>
-                </div>
-            `).join('');
+            try {
+            var html = '';
+            for (var i = 0; i < cart.length; i++) {
+                var item = cart[i];
+                var adventurers = item.adventurers || 1;
+                var unitPrice = (item.priceValue != null) ? formatPrice(item.priceValue) + ' each' : 'Price TBD';
+                var subtotal = (item.priceValue != null) ? formatPrice(item.priceValue * adventurers) : 'TBD';
+
+                html += '<div class="itinerary-panel__item" data-id="' + item.id + '">' +
+                    '<div class="itinerary-panel__item-main">' +
+                    '<div class="itinerary-panel__item-info">' +
+                    '<span class="itinerary-panel__item-page">' + item.page + '</span>' +
+                    '<h4 class="itinerary-panel__item-title">' + item.title + '</h4>' +
+                    '<span class="itinerary-panel__item-unit-price">' + unitPrice + '</span>' +
+                    '</div>' +
+                    '<button class="itinerary-panel__item-remove" data-id="' + item.id + '" aria-label="Remove item">&times;</button>' +
+                    '</div>' +
+                    '<div class="itinerary-panel__item-bottom">' +
+                    '<div class="itinerary-panel__adventurers">' +
+                    '<label>Adventurers:</label>' +
+                    '<div class="itinerary-panel__adventurers-control">' +
+                    '<button class="adventurer-btn adventurer-btn--minus" data-id="' + item.id + '" data-action="minus">-</button>' +
+                    '<input type="number" class="adventurer-input" data-id="' + item.id + '" value="' + adventurers + '" min="1" max="' + MAX_ADVENTURERS + '">' +
+                    '<button class="adventurer-btn adventurer-btn--plus" data-id="' + item.id + '" data-action="plus">+</button>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="itinerary-panel__item-subtotal">' +
+                    '<span class="subtotal-label">Subtotal:</span>' +
+                    '<span class="subtotal-value">' + subtotal + '</span>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+            }
+            container.innerHTML = html;
+
+            // Add event handlers for adventurer controls
+            container.querySelectorAll('.adventurer-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var id = btn.dataset.id;
+                    var action = btn.dataset.action;
+                    var item = getCartItem(id);
+                    if (item) {
+                        var currentCount = item.adventurers || 1;
+                        var newCount = action === 'plus' ? currentCount + 1 : currentCount - 1;
+                        updateAdventurerCount(id, newCount);
+                    }
+                });
+            });
+
+            container.querySelectorAll('.adventurer-input').forEach(function(input) {
+                input.addEventListener('change', function(e) {
+                    var id = input.dataset.id;
+                    var newCount = parseInt(e.target.value, 10);
+                    if (!isNaN(newCount)) {
+                        var success = updateAdventurerCount(id, newCount);
+                        if (!success) {
+                            var item = getCartItem(id);
+                            if (item) e.target.value = item.adventurers || 1;
+                        }
+                    }
+                });
+            });
 
             // Add remove handlers
-            container.querySelectorAll('.itinerary-panel__item-remove').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const id = btn.dataset.id;
+            container.querySelectorAll('.itinerary-panel__item-remove').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var id = btn.dataset.id;
                     removeFromCart(id);
 
                     // Update button on page if visible
-                    document.querySelectorAll('.itinerary-btn').forEach(cardBtn => {
-                        const card = cardBtn.closest('.event-card, .offering-card, .package-card, .activity-card, [class*="-card"]');
+                    document.querySelectorAll('.itinerary-btn').forEach(function(cardBtn) {
+                        var card = cardBtn.closest('.event-card, .offering-card, .package-card, .activity-card, [class*="-card"]');
                         if (card && generateCardId(card) === id) {
                             updateButtonState(cardBtn, false);
                             card.classList.remove('in-itinerary');
@@ -294,9 +468,18 @@
             });
 
             if (submitBtn) submitBtn.disabled = false;
-        }
 
-        if (countEl) countEl.textContent = cart.length;
+            // Update total
+            var result = calculateTotal();
+            if (totalValueEl) {
+                totalValueEl.textContent = result.hasTBD
+                    ? formatPrice(result.total) + ' + TBD items'
+                    : formatPrice(result.total);
+            }
+            } catch (err) {
+                console.error('Error rendering itinerary items:', err);
+            }
+        }
     }
 
     // Clear all items
@@ -327,8 +510,16 @@
         }
 
         // Build message for contact form
-        const itemsList = cart.map(item => `- ${item.title} (${item.page})${item.price ? ' - ' + item.price : ''}`).join('\n');
-        const message = `I'm interested in the following items for my trip:\n\n${itemsList}\n\nPlease provide more information and help me build a custom package.`;
+        var itemsList = cart.map(function(item) {
+            var adventurers = item.adventurers || 1;
+            var subtotal = (item.priceValue != null) ? formatPrice(item.priceValue * adventurers) : 'TBD';
+            return '- ' + item.title + ' (' + item.page + ') x' + adventurers + ' adventurer' + (adventurers > 1 ? 's' : '') + ' - ' + subtotal;
+        }).join('\n');
+
+        var result = calculateTotal();
+        var totalText = result.hasTBD ? formatPrice(result.total) + ' + TBD items' : formatPrice(result.total);
+
+        var message = 'I\'m interested in the following items for my trip:\n\n' + itemsList + '\n\nEstimated Total: ' + totalText + '\n\nPlease provide more information and help me build a custom package.';
 
         // Store for contact form
         sessionStorage.setItem('itinerary_inquiry', JSON.stringify({
