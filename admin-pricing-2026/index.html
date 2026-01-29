@@ -272,6 +272,66 @@
             border-color: #f97014;
             background: #fff8f0;
         }
+        /* Visibility Toggles */
+        .visibility-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        .visibility-section .section-header {
+            background: #28a745;
+        }
+        .visibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
+        }
+        .visibility-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .visibility-item label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+        .toggle-btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-width: 100px;
+        }
+        .toggle-btn.visible {
+            background: #28a745;
+            color: white;
+        }
+        .toggle-btn.visible:hover {
+            background: #218838;
+        }
+        .toggle-btn.hidden {
+            background: #dc3545;
+            color: white;
+        }
+        .toggle-btn.hidden:hover {
+            background: #c82333;
+        }
+        .visibility-actions {
+            padding: 0 1.5rem 1.5rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -316,6 +376,36 @@
 
             <div id="status-message" class="status-message"></div>
 
+            <!-- Visibility Toggles -->
+            <div class="visibility-section">
+                <div class="section-header">Page Pricing Visibility</div>
+                <div class="visibility-grid">
+                    <div class="visibility-item">
+                        <label>Sports Tours</label>
+                        <button id="vis-sports-tours" class="toggle-btn" onclick="toggleVisibility('sports-tours')">Loading...</button>
+                    </div>
+                    <div class="visibility-item">
+                        <label>Sports Events</label>
+                        <button id="vis-sports-events" class="toggle-btn" onclick="toggleVisibility('sports-events')">Loading...</button>
+                    </div>
+                    <div class="visibility-item">
+                        <label>Golf</label>
+                        <button id="vis-golf" class="toggle-btn" onclick="toggleVisibility('golf')">Loading...</button>
+                    </div>
+                    <div class="visibility-item">
+                        <label>Fan Packages</label>
+                        <button id="vis-fan-packages" class="toggle-btn" onclick="toggleVisibility('fan-packages')">Loading...</button>
+                    </div>
+                    <div class="visibility-item">
+                        <label>Adventure</label>
+                        <button id="vis-adventure" class="toggle-btn" onclick="toggleVisibility('adventure')">Loading...</button>
+                    </div>
+                </div>
+                <div class="visibility-actions">
+                    <button class="btn btn-success" onclick="downloadVisibility()">Download Visibility Settings</button>
+                </div>
+            </div>
+
             <div class="actions">
                 <button class="btn btn-primary" onclick="downloadPrices()">Download Updated Prices</button>
                 <button class="btn btn-secondary" onclick="resetChanges()">Reset All Changes</button>
@@ -333,6 +423,7 @@
 
         let pricesData = null;
         let originalData = null;
+        let visibilityData = null;
 
         function login() {
             const password = document.getElementById('password').value;
@@ -341,9 +432,73 @@
                 document.getElementById('login-logo').style.display = 'none';
                 document.getElementById('admin-panel').style.display = 'block';
                 loadPrices();
+                loadVisibility();
             } else {
                 document.getElementById('login-error').style.display = 'block';
             }
+        }
+
+        // Visibility Functions
+        async function loadVisibility() {
+            try {
+                const response = await fetch('../data/visibility.json');
+                visibilityData = await response.json();
+                renderVisibilityToggles();
+            } catch (error) {
+                console.error('Error loading visibility:', error);
+                // Default all to visible if file doesn't exist
+                visibilityData = {
+                    'sports-tours': true,
+                    'sports-events': true,
+                    'golf': true,
+                    'fan-packages': true,
+                    'adventure': true
+                };
+                renderVisibilityToggles();
+            }
+        }
+
+        function renderVisibilityToggles() {
+            const pages = ['sports-tours', 'sports-events', 'golf', 'fan-packages', 'adventure'];
+            pages.forEach(page => {
+                const btn = document.getElementById('vis-' + page);
+                if (btn) {
+                    updateToggleButton(btn, visibilityData[page]);
+                }
+            });
+        }
+
+        function updateToggleButton(btn, isVisible) {
+            if (isVisible) {
+                btn.textContent = 'Visible';
+                btn.className = 'toggle-btn visible';
+            } else {
+                btn.textContent = 'Hidden';
+                btn.className = 'toggle-btn hidden';
+            }
+        }
+
+        function toggleVisibility(page) {
+            visibilityData[page] = !visibilityData[page];
+            const btn = document.getElementById('vis-' + page);
+            updateToggleButton(btn, visibilityData[page]);
+            showStatus('Visibility changed. Remember to download and upload the settings file.', 'success');
+        }
+
+        function downloadVisibility() {
+            const json = JSON.stringify(visibilityData, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'visibility.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showStatus('visibility.json downloaded! Upload it to your /data/ folder on Netlify.', 'success');
         }
 
         function logout() {

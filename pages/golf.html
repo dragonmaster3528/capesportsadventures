@@ -10,10 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        .nav__link::after, .nav__link.active::after, a.nav__link::after { 
-            display: none !important; 
-            background: transparent !important; 
+        .nav__link::after, .nav__link.active::after, a.nav__link::after {
+            display: none !important;
+            background: transparent !important;
             content: none !important;
+        }
+        /* Pricing visibility - controlled by /data/visibility.json */
+        body.hide-pricing .price-range,
+        body.hide-pricing .price-note,
+        body.hide-pricing .package-duration,
+        body.hide-pricing .package-price,
+        body.hide-pricing .duration,
+        body.hide-pricing .price {
+            display: none !important;
         }
     </style>
 </head>
@@ -997,5 +1006,19 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/itinerary-cart.js"></script>
+    <script>
+        // Load pricing visibility settings
+        (function() {
+            fetch('../data/visibility.json')
+                .then(r => r.json())
+                .then(data => {
+                    if (data['golf'] === false) {
+                        document.body.classList.add('hide-pricing');
+                    }
+                })
+                .catch(() => {});
+        })();
+    </script>
 </body>
 </html>

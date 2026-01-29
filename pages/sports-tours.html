@@ -15,8 +15,8 @@
             background: transparent !important;
             content: none !important;
         }
-        /* Temporarily hidden - remove this rule to show durations and prices again */
-        .offering-meta {
+        /* Pricing visibility - controlled by /data/visibility.json */
+        body.hide-pricing .offering-meta {
             display: none !important;
         }
         /* Signature Events Banner */
@@ -760,5 +760,19 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/itinerary-cart.js"></script>
+    <script>
+        // Load pricing visibility settings
+        (function() {
+            fetch('../data/visibility.json')
+                .then(r => r.json())
+                .then(data => {
+                    if (data['sports-tours'] === false) {
+                        document.body.classList.add('hide-pricing');
+                    }
+                })
+                .catch(() => {}); // Fail silently if file doesn't exist
+        })();
+    </script>
 </body>
 </html>

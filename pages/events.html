@@ -16,6 +16,11 @@
             content: none !important;
         }
 
+        /* Pricing visibility - controlled by /data/visibility.json */
+        body.hide-pricing .event-card__price {
+            display: none !important;
+        }
+
         /* Events Page Specific Styles */
         .events-intro {
             text-align: center;
@@ -232,6 +237,9 @@
         }
         .event-card--featured .event-card__header {
             background: linear-gradient(135deg, var(--primary-orange) 0%, #e06010 100%);
+        }
+        .event-card--featured .event-card__badge {
+            background: var(--primary-blue);
         }
 
         /* Section Divider */
@@ -1028,6 +1036,7 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/itinerary-cart.js"></script>
     <script>
         // Dynamic Events Loader with Show/Hide and localStorage persistence
         (function() {
@@ -1172,6 +1181,19 @@
             }
 
             document.addEventListener('DOMContentLoaded', loadEvents);
+        })();
+    </script>
+    <script>
+        // Load pricing visibility settings
+        (function() {
+            fetch('../data/visibility.json')
+                .then(r => r.json())
+                .then(data => {
+                    if (data['sports-events'] === false) {
+                        document.body.classList.add('hide-pricing');
+                    }
+                })
+                .catch(() => {});
         })();
     </script>
 </body>
