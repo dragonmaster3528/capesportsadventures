@@ -769,7 +769,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize accessibility features first
     initializeSkipLink();
-    initializeAccessibilityFeatures();
+    // initializeAccessibilityFeatures(); // Disabled - dark mode toggle removed from header
     createLiveRegion();
     
     // Navigation event listeners with accessibility
