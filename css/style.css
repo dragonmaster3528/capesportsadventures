@@ -1353,11 +1353,6 @@ a:focus {
     margin-bottom: var(--space-6);
 }
 
-.footer__contact p {
-    color: var(--color-gray-400);
-    margin-bottom: var(--space-2);
-}
-
 .footer__social {
     display: flex;
     gap: var(--space-4);
@@ -3590,26 +3585,6 @@ body.high-contrast .pricing-summary {
     color: var(--text-light);
 }
 
-/* Fix blue text on dark backgrounds - change to white */
-.section--dark a,
-.section--dark a:hover,
-.section--dark a:focus {
-    color: var(--text-light);
-}
-
-.footer a,
-.footer a:link,
-.footer a:visited,
-.footer a:hover,
-.footer a:focus,
-.footer a:active {
-    color: var(--color-gray-400) !important;
-}
-
-.footer a:hover {
-    color: var(--color-white) !important;
-}
-
 .section__subtitle {
     font-size: var(--font-size-lg);
     color: var(--color-gray-600);
@@ -4015,7 +3990,6 @@ body.hide-pricing .offering-meta {
     font-size: var(--font-size-xl);
     font-weight: 700;
     margin: 0;
-    color: white;
 }
 
 .itinerary-panel__close {
