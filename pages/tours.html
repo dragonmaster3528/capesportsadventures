@@ -15,16 +15,17 @@
         <nav class="nav">
             <div class="nav__container">
                 <div class="nav__brand">
-                    <h1 class="nav__logo"><a href="../index.html"><img src="../images/logo/cape-experiences-logo.jpeg" alt="Cape Sports Adventures" style="height: 50px;"></a></h1>
+                    <h1 class="nav__logo"><a href="../index.html"><img src="../images/logo/logo10-trimmed-no-background.png" alt="Cape Sports Adventures" style="height: 70px;"></a></h1>
                 </div>
-                <button class="nav__toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </button>
-                <ul class="nav__menu">
+                <ul class="nav__menu" id="nav-menu" role="navigation" aria-label="Main navigation">
                     <li><a href="../index.html" class="nav__link">Home</a></li>
-                    <li><a href="tours.html" class="nav__link active">Sports Tours</a></li>
+                    <li><a href="sports-tours.html" class="nav__link active" aria-current="page" style="background-color: var(--primary-blue) !important; color: var(--text-light) !important;">Sports Tours</a></li>
+                    <li><a href="events.html" class="nav__link">Sports Events</a></li>
                     <li><a href="golf.html" class="nav__link">Golf</a></li>
                     <li><a href="fan-packages.html" class="nav__link">Fan Packages</a></li>
                     <li><a href="adventure.html" class="nav__link">Adventure</a></li>
